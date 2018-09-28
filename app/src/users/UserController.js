@@ -14,7 +14,7 @@
    * @constructor
    */
   function UserController( userService, $mdSidenav, $mdBottomSheet, $timeout, $log ) {
-    var self = this;
+    const self = this;
 
     self.selected     = null;
     self.users        = [ ];

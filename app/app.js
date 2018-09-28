@@ -31,8 +31,15 @@ angular.module('rsm-app',
     .config(['$routeProvider', '$locationProvider',
         function ($routeProvider, $locationProvider) {
             $routeProvider
-                .when('/bi', {
-                    templateUrl: 'states/bi/view.bi.html'
+                .when('/business-intelligence', {
+                    templateUrl: 'states/bi/view.bi.html',
+                    // controller: 'CoreCtrl',
+                    // resolve: {
+                    //     // rr == route resolve
+                    //     rrShowBusinessIntelligenceView: function () {
+                    //         return true;
+                    //     }
+                    // }
                 });
 
             console.log("$routeProvider should be configured");
