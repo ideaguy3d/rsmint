@@ -13,41 +13,42 @@
      * @constructor
      */
     function UserService($q) {
-        var users = [
+        let company = "Redstone Print and Mail";
+        let users = [
             {
                 name: 'Venus',
                 avatar: 'svg-4',
-                content: 'Redstone Print and Mail Coordinator'
+                content: company + ' Coordinator'
             },
             {
                 name: 'Richard',
                 avatar: 'svg-2',
-                content: 'Veteran Data Processor, Excel expert, and AccuZip Power User.'
+                content: company + ' Veteran Data Processor, Excel expert, and AccuZip Power User.'
             },
             {
                 name: 'Lindsey',
                 avatar: 'svg-6',
-                content: "Redstone Print and Mail Data Processor"
+                content: company + " Data Processor"
             },
             {
                 name: 'Tori',
                 avatar: 'svg-4',
-                content: 'Redstone Print and Mail Coordinator'
+                content: company + ' Coordinator'
             },
             {
                 name: 'Ray',
                 avatar: 'svg-5',
-                content: 'Veteran Data Processor and JetLetter Power User.'
+                content: company + ' Veteran Data Processor and JetLetter Power User.'
             },
             {
                 name: 'Julius',
                 avatar: 'svg-1',
-                content: "Hacker."
+                content: company + " Full Stack Developer."
             },
             {
                 name: 'Michael Lewis',
                 avatar: 'svg-4',
-                content: "Beast Designer."
+                content: company + " Super Beast Designer."
             }
         ];
 
