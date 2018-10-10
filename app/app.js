@@ -40,6 +40,9 @@ angular.module('rsm-app',
                     //         return true;
                     //     }
                     // }
+                })
+                .when('/inventory', {
+                    templateUrl: 'states/inventory/view.inventory.html'
                 });
 
             console.log("$routeProvider should be configured");
