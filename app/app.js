@@ -43,6 +43,9 @@ angular.module('rsm-app',
                 })
                 .when('/inventory', {
                     templateUrl: 'states/inventory/view.inventory.html'
+                })
+                .when('/', {
+                    templateUrl: 'states/home/view.home.html'
                 });
 
             console.log("$routeProvider should be configured");

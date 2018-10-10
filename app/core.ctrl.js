@@ -1,7 +1,8 @@
 (function () {
     angular.module('rsm-app').controller('CoreCtrl', ['$scope', '$location',
-        //'rrShowBusinessIntelligenceView',
-        CoreCtrlClass]);
+        //'rrShowBusinessIntelligenceView', // not sure why this resolve wasn't getting injected :\
+        CoreCtrlClass
+    ]);
 
     function CoreCtrlClass($scope, $location) {
         $scope.ccBusinessIntelligence = false;
@@ -20,10 +21,7 @@
         activate();
 
         function activate() {
-            //console.log("rrShowBusinessIntelligenceView = " + rrShowBusinessIntelligenceView);
-            // if (rrShowBusinessIntelligenceView) {
-            //     $scope.ccBusinessIntelligence = false;
-            // }
+            console.log("Core Controller Activation.");
         }
     }
 }());
