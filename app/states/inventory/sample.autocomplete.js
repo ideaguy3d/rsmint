@@ -22,6 +22,7 @@
 
         self.newState = newState;
 
+        // this function gets invoked if user clicks on empty search results
         function newState(state) {
             alert(
                 "Sorry! You'll need to create a Constitution for " +
@@ -39,10 +40,9 @@
          * remote dataservice call.
          */
         function querySearch(query) {
-            var results = query
-                ? self.states.filter(createFilterFor(query))
-                : self.states,
-                deferred;
+            let results = query ? self.states.filter(createFilterFor(query)) : self.states;
+            let deferred;
+
             if (self.simulateQuery) {
                 deferred = $q.defer();
                 $timeout(

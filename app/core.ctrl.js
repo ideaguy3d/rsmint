@@ -21,7 +21,7 @@
         activate();
 
         function activate() {
-            console.log("Core Controller Activation.");
+            console.log("Core Controller Activated.");
         }
     }
 }());

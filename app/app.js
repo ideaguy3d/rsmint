@@ -1,5 +1,6 @@
 angular.module('rsm-app',
-    ['ngMaterial', 'users', 'ngRoute'])
+    ['ngMaterial', 'users', 'ngRoute', "ngMessages"
+    ]) // , "material.svgAssetsCache"
     .config(function ($mdThemingProvider, $mdIconProvider) {
         let redstoneRedMap = $mdThemingProvider.extendPalette('red', {
             '500': '#f5f5f5',
@@ -48,7 +49,6 @@ angular.module('rsm-app',
                     templateUrl: 'states/home/view.home.html'
                 });
 
-            console.log("$routeProvider should be configured");
             //$locationProvider.otherwise('/');
         }]
     );
