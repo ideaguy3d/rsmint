@@ -1,9 +1,13 @@
 <section class="rsm-p12px" style="padding-top: 0;">
-    <div ng-controller="InventoryCtrl as ctrl" layout="column" ng-cloak>
+    <!-- left side -->
+    <div class="rsm-p12px">
+        <a ng-href="#!/inventory/add-inventory">Add Inventory Stock</a>
+    </div>
+    <!-- right side -->
+    <div ng-controller="InventoryCtrl as ctrl" layout="column" ng-cloak class="rsm-w70pct rsm-margin-auto">
         <!-- form starts -->
         <form ng-submit="$event.preventDefault()">
             <p>- {{ctrl.intro1}} -</p>
-
             <md-autocomplete ng-disabled="ctrl.isDisabled" md-no-cache="ctrl.noCache"
                              md-selected-item="ctrl.selectedItem"
                              md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"

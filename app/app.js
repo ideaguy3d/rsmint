@@ -1,6 +1,6 @@
 angular.module('rsm-app',
-    ['ngMaterial', 'users', 'ngRoute', "ngMessages"
-    ]) // , "material.svgAssetsCache"
+    ['ngMaterial', 'ngRoute', 'ngMessages',
+        'ngAnimate', 'users']) // , "material.svgAssetsCache"
     .config(function ($mdThemingProvider, $mdIconProvider) {
         let redstoneRedMap = $mdThemingProvider.extendPalette('red', {
             '500': '#f5f5f5',
@@ -45,10 +45,13 @@ angular.module('rsm-app',
                 .when('/inventory', {
                     templateUrl: 'states/inventory/view.inventory.html'
                 })
+                .when('/inventory/add-inventory', {
+                    templateUrl: 'states/inventory/view.add-inventory.html'
+                })
                 .when('/', {
                     templateUrl: 'states/home/view.home.html'
                 });
 
-            //$locationProvider.otherwise('/');
+            // $locationProvider.otherwise('/');
         }]
     );

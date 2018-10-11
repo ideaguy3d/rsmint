@@ -14,6 +14,8 @@
         vm.selectedItem = '';
         vm.searchText = '';
         vm.noCache = '';
+        vm.stockType = '';
+        vm.jobType = '';
 
         vm.states = loadSkus();
         vm.searchTextChange = searchTextChange;

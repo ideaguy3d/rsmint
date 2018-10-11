@@ -138,3 +138,24 @@ span.name {
 .rsm-p12px {
     padding: 12px;
 }
+
+.rsm-w70pct {
+    width: 70%;
+}
+
+.rsm-margin-auto {
+    margin: auto;
+}
+
+a.rsm-no-decor {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+a.rsm-no-decor:focus {
+    text-decoration: none;
+}
+
+a.rsm-no-decor:visited {
+    text-decoration: none;
+}

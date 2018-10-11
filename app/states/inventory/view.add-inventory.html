@@ -1,0 +1,44 @@
+<section class="rsm-p12px" style="padding-top: 0;">
+
+    <!--  layout="column"  -->
+    <div ng-controller="InventoryCtrl as ctrl" ng-cloak class="rsm-w70pct rsm-margin-auto">
+        <h2>Add Inventory</h2>
+
+        <form ng-submit="$event.preventDefault()">
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Stock Type</label>
+                    <input type="text" ng-model="ctrl.stockType">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Job Type</label>
+                    <input type="text" ng-model="ctrl.jobType">
+                </md-input-container>
+            </div>
+
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Inventory Description</label>
+                    <input type="text" ng-model="ctrl.jobType">
+                </md-input-container>
+            </div>
+
+            <!-- paper stock & warehouse location -->
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Paper Stock</label>
+                    <input type="text" ng-model="ctrl.stockType">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Warehouse Location</label>
+                    <input type="text" ng-model="ctrl.jobType">
+                </md-input-container>
+            </div>
+
+        </form>
+
+        <!-- + button -->
+
+    </div> <!-- END OF: ng-controller = InventoryCtrl -->
+
+</section> <!-- END OF: main section for inventory view -->

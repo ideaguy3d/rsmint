@@ -46,7 +46,7 @@
 
         /**
          * Select the current avatars
-         * @param menuId
+         * @param user
          */
         function selectUser(user) {
             self.selected = angular.isNumber(user) ? self.users[user] : user;
