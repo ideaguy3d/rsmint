@@ -16,14 +16,21 @@
         vm.noCache = '';
         vm.stockType = '';
         vm.jobType = '';
+        vm.totalInventoryAdded = 0;
 
         vm.states = loadSkus();
         vm.searchTextChange = searchTextChange;
         vm.selectedItemChange = selectedItemChange;
         vm.querySearch = querySearch;
+        vm.addInventoryToDb = addInventoryToDb;
 
         function searchTextChange(searchText) {
             console.log("text changed to: "+searchText);
+        }
+
+        function addInventoryToDb() {
+            vm.totalInventoryAdded++;
+            console.log("Inventory added.");
         }
 
         function selectedItemChange(item) {

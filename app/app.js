@@ -1,9 +1,9 @@
 angular.module('rsm-app',
-    ['ngMaterial', 'ngRoute', 'ngMessages',
+    ['ngMaterial', 'ngRoute', 'ngMessages', 'ngMdIcons',
         'ngAnimate', 'users']) // , "material.svgAssetsCache"
     .config(function ($mdThemingProvider, $mdIconProvider) {
         let redstoneRedMap = $mdThemingProvider.extendPalette('red', {
-            '500': '#f5f5f5',
+            '500': '#434343',
             'contrastDefaultColor': 'dark'
         });
 
