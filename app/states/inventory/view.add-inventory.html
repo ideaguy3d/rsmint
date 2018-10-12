@@ -8,8 +8,8 @@
             <!-- description -->
             <div layout-gt-xs="row">
                 <md-input-container class="md-block" flex-gt-xs>
-                    <label>Inventory Description</label>
-                    <input type="text" ng-model="ctrl.jobType">
+                    <label>Stock Description</label>
+                    <input type="text" ng-model="ctrl.stockDescription">
                 </md-input-container>
             </div>
 
@@ -29,14 +29,13 @@
             <div layout-gt-xs="row">
                 <md-input-container class="md-block" flex-gt-xs>
                     <label>Paper Stock</label>
-                    <input type="text" ng-model="ctrl.stockType">
+                    <input type="text" ng-model="ctrl.paperStock">
                 </md-input-container>
                 <md-input-container class="md-block" flex-gt-xs>
                     <label>Warehouse Location</label>
-                    <input type="text" ng-model="ctrl.jobType">
+                    <input type="text" ng-model="ctrl.warehouseLocation">
                 </md-input-container>
             </div>
-
         </form>
 
         <!-- + button -->
@@ -50,5 +49,7 @@
         </div>
 
     </div> <!-- END OF: ng-controller = InventoryCtrl -->
+
+    <!-- TODO: figure out how to dynamically add as many "add inventory" forms as needed, rather than having to do 1 at a time -->
 
 </section> <!-- END OF: main section for inventory view -->

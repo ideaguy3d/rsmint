@@ -3,27 +3,38 @@
 
     angular.module("rsm-app")
         .controller("InventoryCtrl", [
-            "$timeout", "$q", "$log",
+            "$timeout", "$q", "$log", "rsmInventoryService",
             InventoryCtrlClass
         ]);
 
     function InventoryCtrlClass($timeout, $q, $log) {
+        //-- view model:
         const vm = this;
-        // quick way to make sure the controller is wired up
+
+        //-- class fields:
         vm.intro1 = "Type in SKU or Stock Description";
+        // view model strings
         vm.selectedItem = '';
         vm.searchText = '';
         vm.noCache = '';
         vm.stockType = '';
         vm.jobType = '';
+        vm.paperStock = '';
+        vm.warehouseLocation = '';
+        vm.stockDescription = '';
+        // view model integers
         vm.totalInventoryAdded = 0;
 
+        //-- initializer functions:
         vm.states = loadSkus();
+
+        //-- view model functions:
         vm.searchTextChange = searchTextChange;
         vm.selectedItemChange = selectedItemChange;
         vm.querySearch = querySearch;
         vm.addInventoryToDb = addInventoryToDb;
 
+        //-- function definitions:
         function searchTextChange(searchText) {
             console.log("text changed to: "+searchText);
         }
