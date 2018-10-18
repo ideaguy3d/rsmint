@@ -1,12 +1,11 @@
-(function(){
+(function () {
     "use strict";
 
     angular.module('rsm-app').factory('rsmInventoryService', [
-       '$http', InventoryServiceClass
+        '$http', InventoryServiceClass
     ]);
 
     function InventoryServiceClass($http) {
-
         let uriStockLocal = '';
 
         /**

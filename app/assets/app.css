@@ -169,4 +169,7 @@ button.rsm-btn32-icon {
     color: whitesmoke;
 }
 
+.rsm-text-center {
+    text-align: center !important;
+}
 

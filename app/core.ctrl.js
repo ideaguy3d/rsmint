@@ -5,6 +5,7 @@
     ]);
 
     function CoreCtrlClass($scope, $location) {
+        $scope.appLocal = true;
         $scope.ccBusinessIntelligence = false;
         $scope.ccUserIsAuthenticated = false;
 

@@ -1,17 +1,24 @@
 <section id="rsm-auth-section">
-    <div layout="column" layout-align="center center">
-        <h1>Authentication & Authorization</h1>
-
-        <md-input-container class="md-icon-float md-block" flex="70">
+    <!-- raw element -->
+    <h1 class="rsm-text-center">Redstone Print and Mail</h1>
+    <h4 class="rsm-text-center">Authentication & Authorization</h4>
+    <!-- layout container -->
+    <div layout-gt-xs="row" layout-align-xs="center center" layout-align-gt-xs="center center"
+         layout-padding>
+        <!--<div layout="row" flex></div>-->
+        <md-input-container class="md-icon-float md-block" flex="40">
             <!-- Use floating label instead of placeholder -->
-            <label>Name</label>
+            <label>Username</label>
             <!--<md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>-->
             <input ng-model="user.name" type="text">
         </md-input-container>
 
-        <md-input-container md-no-float="" class="md-block" flex="70">
+        <!-- md-no-float -->
+        <md-input-container class="md-block" flex="40">
             <!--<md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>-->
             <input ng-model="user.phone" type="text" placeholder="Password">
         </md-input-container>
     </div>
+    <!-- raw element -->
+    <md-button class="md-raised md-warn">Login</md-button>
 </section>

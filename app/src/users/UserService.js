@@ -14,6 +14,7 @@
      */
     function UserService($q) {
         let company = "Redstone Print and Mail";
+        // local users data
         let users = [
             {
                 name: 'Venus',
