@@ -7,8 +7,10 @@
 
     function InventoryServiceClass($http) {
 
+        let uriStockLocal = '';
+
         /**
-         * inventoryData is a js object that'll contain
+         * 'stockData' is a js object that'll contain
          * all the pertinent input form info
          *
          * @param stockData  object object
@@ -20,7 +22,7 @@
         }
 
         return {
-
+            addInventory: addInventory
         }
     }
 }());

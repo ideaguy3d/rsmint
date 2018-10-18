@@ -6,6 +6,7 @@
 
     function CoreCtrlClass($scope, $location) {
         $scope.ccBusinessIntelligence = false;
+        $scope.ccUserIsAuthenticated = false;
 
         $scope.ccToggleBusinessIntelligence = function () {
             $scope.ccBusinessIntelligence = !$scope.ccBusinessIntelligence;

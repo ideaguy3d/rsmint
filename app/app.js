@@ -8,9 +8,7 @@ angular.module('rsm-app',
         });
 
         $mdThemingProvider.definePalette('redstoneRed', redstoneRedMap);
-
-        $mdThemingProvider.theme('default')
-            .primaryPalette('redstoneRed');
+        $mdThemingProvider.theme('default').primaryPalette('redstoneRed');
 
         $mdIconProvider
             .defaultIconSet("./assets/svg/avatars.svg", 128)
@@ -48,8 +46,14 @@ angular.module('rsm-app',
                 .when('/inventory/add-inventory', {
                     templateUrl: 'states/inventory/view.add-inventory.html'
                 })
-                .when('/', {
+                .when('/coordinator-tools', {
                     templateUrl: 'states/home/view.home.html'
+                })
+                .when('/home', {
+                    templateUrl: 'states/home/view.home.html'
+                })
+                .when('/', {
+                    templateUrl: 'states/auth/view.auth.html'
                 });
 
             // $locationProvider.otherwise('/');

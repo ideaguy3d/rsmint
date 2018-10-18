@@ -24,7 +24,7 @@
 
 <body ng-app="rsm-app" layout="column" ng-cloak ng-controller="CoreCtrl">
 
-<md-toolbar id="rsm-main-nav" layout="row" layout-align="start center">
+<md-toolbar ng-show="ccUserIsAuthenticated" id="rsm-main-nav" layout="row" layout-align="start center">
     <a ng-href="#!/" class="rsm-p12px">
         <img src="https://redstonemail.com/companies/renderLogo/568ae6c2103fb4f64f2337d2" alt="logo" width="80px">
     </a>
@@ -44,8 +44,7 @@
 
 <!--
 class="rsm-ng-view" // to get ng-view vertically and horizontally centered.
-
-    //-- Application Entry Point:
+//-- Application Entry Point:
 -->
 <ng-view></ng-view>
 
@@ -69,6 +68,7 @@ class="rsm-ng-view" // to get ng-view vertically and horizontally centered.
 <!-- main application entry point -->
 <script src="app.js"></script>
 <script src="core.ctrl.js"></script>
+<script src="services/ser.inventory.js"></script>
 <script src="states/inventory/ctrl.inventory.js"></script>
 
 </body>
