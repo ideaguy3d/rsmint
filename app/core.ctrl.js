@@ -1,11 +1,11 @@
 (function () {
-    angular.module('rsm-app').controller('CoreCtrl', ['$scope', '$location',
+    angular.module('rsm-app').controller('CoreCtrl', ['$scope', '$location', '$rootScope',
         //'rrShowBusinessIntelligenceView', // not sure why this resolve wasn't getting injected :\
         CoreCtrlClass
     ]);
 
-    function CoreCtrlClass($scope, $location) {
-        $scope.appLocal = true;
+    function CoreCtrlClass($scope, $location, $rootScope) {
+        $rootScope.appLocal = true;
         $scope.ccBusinessIntelligence = false;
         $scope.ccUserIsAuthenticated = false;
 
