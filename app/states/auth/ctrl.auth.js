@@ -20,8 +20,7 @@
                     console.log(res);
                 })
                 .catch(function (err) {
-                    console.log("RSM_ERROR");
-                    console.log(err);
+                    console.error("RSM_ERROR: ", err);
                 });
         };
     }
