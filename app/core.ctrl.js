@@ -5,9 +5,11 @@
     ]);
 
     function CoreCtrlClass($scope, $location, $rootScope) {
+        // get a timestamp for logging while developing:
+        let today = getCurrentDate();
         $rootScope.appLocal = true;
         $scope.ccBusinessIntelligence = false;
-        $scope.ccUserIsAuthenticated = false;
+        //$scope.rUserIsAuthenticated = false;
 
         $scope.ccToggleBusinessIntelligence = function () {
             $scope.ccBusinessIntelligence = !$scope.ccBusinessIntelligence;
@@ -23,7 +25,17 @@
         activate();
 
         function activate() {
-            console.log("Core Controller Activated.");
+            console.log("Core Controller Activated ~ " + today);
+        }
+
+        function getCurrentDate() {
+            let currentdate = new Date();
+            return (currentdate.getMonth() + 1) + "/"
+                + currentdate.getDate() + "/"
+                + currentdate.getFullYear() + " @ "
+                + currentdate.getHours() + ":"
+                + currentdate.getMinutes() + ":"
+                + currentdate.getSeconds();
         }
     }
 }());

@@ -2,6 +2,10 @@
     <!-- raw element -->
     <h1 class="rsm-text-center">Redstone Print and Mail Inventory Application</h1>
     <h4 class="rsm-text-center">Authentication & Authorization</h4>
+    <!-- login error notifier -->
+    <p ng-if="authCtrl.loginError" class="rsm-text-center" style="color: red">
+        <b>Wrong <i>username</i> or <i>password</i>, Please try again. {{authCtrl.loginAttempts}} Login Attempts</b>
+    </p>
 
     <form ng-submit="authCtrl.rsmLogin()">
         <!-- layout container -->

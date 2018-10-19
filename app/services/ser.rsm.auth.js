@@ -18,10 +18,10 @@
                 '?username=' + username +
                 '&qqq=' + qqq;
 
-            console.log("In rsmLogin()");
-            console.log(loginAuthObj);
-            console.log("will make HTTP GET request to:");
-            console.log(getRequestUri);
+            if ($rootScope) {
+                console.log("will make HTTP GET request to:");
+                console.log(getRequestUri);
+            }
 
             return $http.get(getRequestUri);
         }

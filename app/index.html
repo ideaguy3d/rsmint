@@ -24,7 +24,7 @@
 
 <body ng-app="rsm-app" layout="column" ng-cloak ng-controller="CoreCtrl">
 
-<md-toolbar ng-show="ccUserIsAuthenticated" id="rsm-main-nav" layout="row" layout-align="start center">
+<md-toolbar ng-show="rUserIsAuthenticated" id="rsm-main-nav" layout="row" layout-align="start center">
     <a ng-href="#!/" class="rsm-p12px">
         <img src="https://redstonemail.com/companies/renderLogo/568ae6c2103fb4f64f2337d2" alt="logo" width="80px">
     </a>
@@ -39,13 +39,13 @@
 
 
 </md-toolbar>
-
 <br>
 
 <!--
 class="rsm-ng-view" // to get ng-view vertically and horizontally centered.
 //-- Application Entry Point:
 -->
+
 <ng-view></ng-view>
 
 
@@ -61,9 +61,9 @@ class="rsm-ng-view" // to get ng-view vertically and horizontally centered.
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
 
 <!-- sample custom ngModule -->
-<script src="./src/users/Users.js"></script>
-<script src="./src/users/UserController.js"></script>
-<script src="./src/users/UserService.js"></script>
+<script src="samples/users/Users.js"></script>
+<script src="samples/users/UserController.js"></script>
+<script src="samples/users/UserService.js"></script>
 
 <!-- main application entry point -->
 <script src="app.js"></script>
