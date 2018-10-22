@@ -18,20 +18,20 @@
         };
 
         vm.rsmLogin = function () {
-            if ($rootScope.appLocal) {
+            if ($rootScope.R_appLocal) {
                 console.log("should make request to Ninja API");
             }
 
             rsmAuthSer.rsmLogin(vm.userDataModel)
                 .then(function (res) {
-                    if ($rootScope.appLocal) {
+                    if ($rootScope.R_appLocal) {
                         console.log("------------------------------------------------");
                         console.log(res);
                     }
 
                     let usernameRes = res.data["x-rsm-result-set"][0]['username'];
 
-                    if ($rootScope.appLocal) {
+                    if ($rootScope.R_appLocal) {
                         console.log("------------------------------------------------");
                         console.log("usernameRes = " + usernameRes);
                     }

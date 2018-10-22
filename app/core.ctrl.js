@@ -1,16 +1,16 @@
 (function () {
     angular.module('rsm-app').controller('CoreCtrl', ['$scope', '$location', '$rootScope',
-        //'rrShowBusinessIntelligenceView', // not sure why this resolve wasn't getting injected :\
+        //'resolvedShowBusinessIntelligenceView', // not sure why this resolve wasn't getting injected :\
         CoreCtrlClass
     ]);
 
     function CoreCtrlClass($scope, $location, $rootScope) {
         // get a timestamp for logging while developing:
         let today = getCurrentDate();
-        $rootScope.appLocal = true;
+        // super important root scope
+        $rootScope.R_appLocal = true;
+        // core ctrl scope
         $scope.ccBusinessIntelligence = false;
-        //$scope.rUserIsAuthenticated = false;
-
         $scope.ccToggleBusinessIntelligence = function () {
             $scope.ccBusinessIntelligence = !$scope.ccBusinessIntelligence;
             if ($scope.ccBusinessIntelligence) {
