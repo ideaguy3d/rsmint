@@ -41,7 +41,15 @@ angular.module('rsm-app',
                     // }
                 })
                 .when('/inventory', {
-                    templateUrl: 'states/inventory/view.inventory.html'
+                    templateUrl: 'states/inventory/view.inventory.html',
+                    controller: 'InventoryCtrl',
+                    controllerAs: 'ctrl',
+                    resolve: {
+                        resolvedAuthCheck: function () {
+                            let test = "hi ^_^/";
+                            return "route resolved value = " + test;
+                        }
+                    }
                 })
                 .when('/inventory/add-inventory', {
                     templateUrl: 'states/inventory/view.add-inventory.html'

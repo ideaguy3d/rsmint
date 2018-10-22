@@ -3,11 +3,11 @@
 
     angular.module("rsm-app")
         .controller("InventoryCtrl", [
-            "$timeout", "$q", "$log", "rsmInventoryService",
+            "$timeout", "$q", "$log", "rsmInventoryService", "resolvedAuthCheck",
             InventoryCtrlClass
         ]);
 
-    function InventoryCtrlClass($timeout, $q, $log) {
+    function InventoryCtrlClass($timeout, $q, $log, rsmInventoryService, resolvedAuthCheck) {
         //-- view model:
         const vm = this;
 
@@ -33,8 +33,18 @@
         vm.selectedItemChange = selectedItemChange;
         vm.querySearch = querySearch;
         vm.addInventoryToDb = addInventoryToDb;
+        vm.$onInit = initCtrl;
+        activate();
 
         //-- function definitions:
+        function activate() {
+            console.log("RSM activate() - resolved auth route check = " + resolvedAuthCheck);
+        }
+
+        function initCtrl() {
+            console.log("RSM $onInit - resolved auth route check = " + resolvedAuthCheck);
+        }
+
         function searchTextChange(searchText) {
             console.log("text changed to: "+searchText);
         }
