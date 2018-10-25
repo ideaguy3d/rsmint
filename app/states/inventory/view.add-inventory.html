@@ -1,7 +1,6 @@
 <section class="rsm-p12px" style="padding-top: 0;">
-
     <!--  layout="column"  -->
-    <div ng-controller="InventoryCtrl as ctrl" ng-cloak class="rsm-w70pct rsm-margin-auto">
+    <div ng-cloak class="rsm-w70pct rsm-margin-auto">
         <h2>Add Inventory</h2>
 
         <form ng-submit="$event.preventDefault()">
@@ -9,7 +8,7 @@
             <div layout-gt-xs="row">
                 <md-input-container class="md-block" flex-gt-xs>
                     <label>Stock Description</label>
-                    <input type="text" ng-model="ctrl.stockDescription">
+                    <input type="text" ng-model="cAddInv.stockDescription">
                 </md-input-container>
             </div>
 
@@ -17,11 +16,11 @@
             <div layout-gt-xs="row">
                 <md-input-container class="md-block" flex-gt-xs>
                     <label>Stock Type e.g.</label>
-                    <input type="text" ng-model="ctrl.stockType">
+                    <input type="text" ng-model="cAddInv.stockType">
                 </md-input-container>
                 <md-input-container class="md-block" flex-gt-xs>
                     <label>Job Type</label>
-                    <input type="text" ng-model="ctrl.jobType">
+                    <input type="text" ng-model="cAddInv.jobType">
                 </md-input-container>
             </div>
 
@@ -29,11 +28,11 @@
             <div layout-gt-xs="row">
                 <md-input-container class="md-block" flex-gt-xs>
                     <label>Paper Stock</label>
-                    <input type="text" ng-model="ctrl.paperStock">
+                    <input type="text" ng-model="cAddInv.paperStock">
                 </md-input-container>
                 <md-input-container class="md-block" flex-gt-xs>
                     <label>Warehouse Location</label>
-                    <input type="text" ng-model="ctrl.warehouseLocation">
+                    <input type="text" ng-model="cAddInv.warehouseLocation">
                 </md-input-container>
             </div>
         </form>
@@ -41,14 +40,13 @@
         <!-- + button -->
         <div layout-gt-xs="row" layout-align="start center">
             <md-button class="md-fab md-primary rsm-btn32-icon" aria-label="Add Inventory Item"
-                       ng-click="ctrl.addInventoryToDb()">
+                       ng-click="cAddInv.addInventoryToDb()">
                 <!-- style="fill: white" -->
                 <ng-md-icon icon="add" size="32"></ng-md-icon>
             </md-button>
-            <p><b>{{"Total Inventory Added: "+ctrl.totalInventoryAdded}}</b></p>
+            <p><b>{{"Total Inventory Added: "+cAddInv.totalInventoryAdded}}</b></p>
         </div>
-
-    </div> <!-- END OF: ng-controller = InventoryCtrl -->
+    </div> <!-- END OF: ng-controller = AddInvCtrl -->
 
     <!-- TODO: figure out how to dynamically add as many "add inventory" forms as needed, rather than having to do 1 at a time -->
 

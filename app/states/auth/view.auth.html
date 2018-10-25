@@ -1,7 +1,8 @@
 <section id="rsm-auth-section" ng-controller="RsmAuthCtrl as authCtrl">
     <!-- raw element -->
-    <h1 class="rsm-text-center">Redstone Print and Mail Inventory Application</h1>
+    <h1 class="rsm-text-center">Redstone Print and Mail Intranet Application</h1>
     <h4 class="rsm-text-center">Authentication & Authorization</h4>
+
     <!-- login error notifier -->
     <p ng-if="authCtrl.loginError" class="rsm-text-center" style="color: red">
         <b>Wrong <i>username</i> or <i>password</i>, Please try again. {{authCtrl.loginAttempts}} Login Attempts</b>
@@ -26,4 +27,5 @@
         </div>
         <md-button type="submit" class="md-raised md-warn">Login</md-button>
     </form>
+    <p>App is local: {{R_appLocal}}</p>
 </section>

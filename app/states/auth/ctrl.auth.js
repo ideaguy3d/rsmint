@@ -1,8 +1,7 @@
 (function () {
     angular.module('rsm-app')
         .controller('RsmAuthCtrl', [
-            '$rootScope', '$scope', '$location', '$timeout',
-            'rsmAuthSer',
+            '$rootScope', '$scope', '$location', '$timeout', 'rsmAuthSer',
             RsmAuthCtrlClass
         ]);
 

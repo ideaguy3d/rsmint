@@ -30,38 +30,50 @@ angular.module('rsm-app',
     .config(['$routeProvider', '$locationProvider',
         function ($routeProvider, $locationProvider) {
             $routeProvider
+                // 1, controller: 'CoreCtrl'
                 .when('/business-intelligence', {
                     templateUrl: 'states/bi/view.bi.html',
-                    // controller: 'CoreCtrl',
-                    // resolve: {
-                    //     // rr == route resolve
-                    //     rrShowBusinessIntelligenceView: function () {
-                    //         return true;
-                    //     }
-                    // }
-                })
-                .when('/inventory', {
-                    templateUrl: 'states/inventory/view.inventory.html',
-                    controller: 'InventoryCtrl',
-                    controllerAs: 'ctrl',
+                    controller: 'CoreCtrl',
                     resolve: {
-                        resolvedAuthCheck: function () {
-                            let test = "hi ^_^/";
-                            return "route resolved value = " + test;
+                        resolvedShowBusinessIntelligenceView: function () {
+                            return true;
                         }
                     }
                 })
-                .when('/inventory/add-inventory', {
-                    templateUrl: 'states/inventory/view.add-inventory.html'
+                // 2, controller: 'InventoryCtrl'
+                .when('/inventory', {
+                    templateUrl: 'states/inventory/view.inventory.html',
+                    controller: 'InventoryCtrl',
+                    controllerAs: 'cInv',
+                    resolve: {
+                        resolvedAuthCheck: function () {
+                            let test = "hi ^_^/";
+                            return "'/inventory' route resolved value = " + test;
+                        }
+                    }
                 })
-                .when('/coordinator-tools', {
-                    templateUrl: 'states/home/view.home.html'
+                // 3, controller: 'InventoryCtrl'
+                .when('/add-inventory', {
+                    templateUrl: 'states/inventory/view.add-inventory.html',
+                    controller: 'AddInvCtrl',
+                    controllerAs: 'cAddInv',
+                    resolve: {
+                        resolvedAddInvAuthCheck: function () {
+                            let test = "hi ^_^/";
+                            return "'/add-inventory' route resolved value = " + test;
+                        }
+                    }
                 })
-                .when('/home', {
-                    templateUrl: 'states/home/view.home.html'
-                })
+                // 4, controller: 'HomeCtrl'
                 .when('/', {
-                    templateUrl: 'states/auth/view.auth.html'
+                    templateUrl: 'states/home/view.home.html',
+                    controller: 'HomeCtrl',
+                    controllerAs: 'homeCtrl'
+                })
+                // 5, controller: 'RsmAuthCtrl'
+                .when('/auth', {
+                    templateUrl: 'states/auth/view.auth.html',
+                    controller: 'RsmAuthCtrl'
                 });
 
             // $locationProvider.otherwise('/');
