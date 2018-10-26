@@ -1,0 +1,10 @@
+<section>
+    <p>ctrl has activated = {{cRsmViewTest.hasActivated}}</p>
+    <p>should add value = {{cRsmViewTest.routeVal_1}}</p>
+    <hr>
+    <div ng-if="cRsmViewTest.hasActivated">
+        <iframe src="https://maps.mhetadata.com/ninja/app/{{cRsmViewTest.routeVal_1}}"
+                frameborder="0" width="100%"
+                height="500px"></iframe>
+    </div>
+</section>

@@ -75,8 +75,10 @@ angular.module('rsm-app',
                     templateUrl: 'states/auth/view.auth.html',
                     controller: 'RsmAuthCtrl'
                 })
-                .when('/view-test', {
-                    templateUrl: 'states/view-test/view.view-test.html'
+                .when('/test', {
+                    templateUrl: 'states/view-test/view.test.html',
+                    controller: 'RsmViewTestCtrl',
+                    controllerAs: 'cRsmViewTest'
                 });
 
             // $locationProvider.otherwise('/');

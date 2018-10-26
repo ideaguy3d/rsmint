@@ -6,7 +6,7 @@
         ]);
 
     /**
-     * Main Controller for the Angular Material Starter App
+     * - Main Controller for the Angular Material Starter App
      *
      * @param userService
      * @param $mdSidenav
@@ -34,7 +34,7 @@
             });
 
         // *********************************
-        // ******* Internal methods *******
+        //  ****** Internal methods *******
         // *********************************
 
         /**
