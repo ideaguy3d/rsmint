@@ -6,7 +6,7 @@
         .config(function ($mdThemingProvider) {
             $mdThemingProvider.theme('red').dark();
 
-            var redstoneRedMap = $mdThemingProvider.extendPalette('red', {
+            let redstoneRedMap = $mdThemingProvider.extendPalette('red', {
                 '500': '#ff0000',
                 'contrastDefaultColor': 'dark'
             });

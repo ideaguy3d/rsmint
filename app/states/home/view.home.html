@@ -1,3 +1,4 @@
+<!-- ul for 'user list' -->
 <section ng-controller="UserController as ul">
     <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
         <md-icon md-svg-icon="share"></md-icon>
@@ -18,14 +19,44 @@
         </md-sidenav>
 
         <md-content flex id="content">
-            <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
+            <!-- user icon -->
+            <!--<md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>-->
+
+            <!-- meta info -->
             <h2>{{ul.selected.name}}</h2>
-            <p> <small>ctrl = {{homeCtrl.info}}</small> </p>
+            <p>
+                <small>ctrl = {{homeCtrl.info}}</small>
+            </p>
             <p>{{ul.selected.content}}</p>
-            <!--<iframe src="http://localhost/ninja/richard-app/" frameborder="0" width="400" height="800"></iframe>-->
+
+
+            <div ng-switch="ul.selected.name">
+                <div ng-switch-when="Heather">
+                    <h1>first switch </h1>
+                    <iframe src="http://192.168.7.17/dmv/" frameborder="0" width="100%" height="500px"></iframe>
+                    <h4>header tools</h4>
+                </div>
+
+                <div class="rsm-user-switch" ng-switch-when="Richard">
+                    <h1>switch 2</h1>
+                    <iframe src="http://localhost/ninja/_richard/" frameborder="0" width="100%" height="800"></iframe>
+                    <h4>richard localhost tools</h4>
+                </div>
+
+                <div ng-switch-when="Lindsey">
+                    <h1>3rd switch</h1>
+                    <h4>tools for lindsey :)</h4>
+                </div>
+
+                <div ng-switch-default>
+                    <h1>default switch</h1>
+                </div>
+            </div>
+
+            <!-- button in top right corner -->
             <md-button class="share" md-no-ink ng-click="ul.makeContact(ul.selected)"
                        aria-label="Share with {{ ul.selected.name }}">
-                 <md-icon md-svg-icon="menu"></md-icon>
+                <md-icon md-svg-icon="menu"></md-icon>
             </md-button>
         </md-content>
     </div>

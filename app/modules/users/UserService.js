@@ -17,7 +17,7 @@
         // local users data
         let users = [
             {
-                name: 'Venus',
+                name: 'Heather',
                 avatar: 'svg-4',
                 content: company + ' Coordinator'
             },

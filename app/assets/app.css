@@ -183,3 +183,8 @@ ng-md-icon.rsm-sidenav-icon > svg {
     top: 7px;
 }
 
+.rsm-user-switch {
+    height: 400px;
+    width: 400px;
+}
+
