@@ -15,6 +15,7 @@
                              md-search-text="cInv.searchText" md-selected-item-change="cInv.selectedItemChange(item)"
                              md-items="item in cInv.querySearch(cInv.searchText)" md-item-text="item.display"
                              md-min-length="0" placeholder="SKU or Stock Description">
+
                 <!-- search results -->
                 <md-item-template>
                     <span md-highlight-text="cInv.searchText" md-highlight-flags="^i">{{item.display}}</span>

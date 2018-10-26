@@ -173,3 +173,13 @@ button.rsm-btn32-icon {
     text-align: center !important;
 }
 
+.rsm-coordinator-sidenav {
+    position: absolute;
+    top: 18px;
+}
+
+ng-md-icon.rsm-sidenav-icon > svg {
+    position: relative;
+    top: 7px;
+}
+
