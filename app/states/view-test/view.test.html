@@ -1,10 +1,12 @@
 <section>
-    <p>ctrl has activated = {{cRsmViewTest.hasActivated}}</p>
-    <p>should add value = {{cRsmViewTest.routeVal_1}}</p>
-    <hr>
     <div ng-if="cRsmViewTest.hasActivated">
-        <iframe src="https://maps.mhetadata.com/ninja/app/{{cRsmViewTest.routeVal_1}}"
-                frameborder="0" width="100%"
-                height="500px"></iframe>
+        <!-- test cases -->
+        <!-- src="https://maps.mhetadata.com/ninja/app/{{cRsmViewTest.routeVal_1}}" won't work due to XSS security vulnerabilities -->
+        <!-- <iframe src="https://maps.mhetadata.com/ninja/app/world" frameborder="0" width="100%" height="500px"></iframe> -->
+
+        <!-- localhost, comment this out when deployed -->
+        <iframe src="http://localhost/ninja/_elevate-recoveries" frameborder="0" class="rsm-iframe-100"></iframe>
+
+        <!-- production -->
     </div>
 </section>

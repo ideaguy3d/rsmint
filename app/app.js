@@ -75,6 +75,7 @@ angular.module('rsm-app',
                     templateUrl: 'states/auth/view.auth.html',
                     controller: 'RsmAuthCtrl'
                 })
+                // 6, controller: 'RsmViewTestCtrl'
                 .when('/test', {
                     templateUrl: 'states/view-test/view.test.html',
                     controller: 'RsmViewTestCtrl',
