@@ -22,38 +22,9 @@
     </style>
 </head>
 
-<body ng-app="rsm-app" layout="column" ng-cloak ng-controller="CoreCtrl">
-
-<md-toolbar id="rsm-main-nav" layout="row" layout-align="space-between center">
-
-    <div layout="row" layout-align="start center">
-        <a ng-href="#!/" class="rsm-p12px">
-            <img src="https://redstonemail.com/companies/renderLogo/568ae6c2103fb4f64f2337d2" alt="logo" width="80px">
-        </a>
-
-        <a ng-href="#!/inventory" class="rsm-no-decor">
-            <md-button>Inventory</md-button>
-        </a>
-
-        <a ng-href="#!/business-intelligence" class="rsm-no-decor">
-            <md-button>Business Intelligence</md-button>
-        </a>
-    </div>
-
-    <div layout="row" layout-align="end center">
-        <a ng-href="#!/auth" class="rsm-no-decor">
-            <md-button>Login</md-button>
-        </a>
-    </div>
-</md-toolbar>
-
-<!--
-class="rsm-ng-view" // to get ng-view vertically and horizontally centered.
-//-- Application Entry Point:
--->
+<body ng-app="rsm-pick" layout="column" ng-cloak ng-controller="CoreCtrl">
 
 <ng-view></ng-view>
-
 
 <!-- node modules -->
 <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
@@ -62,29 +33,20 @@ class="rsm-ng-view" // to get ng-view vertically and horizontally centered.
 <script type="text/javascript" src="../node_modules/angular-route/angular-route.min.js"></script>
 <script type="text/javascript" src="../node_modules/angular-messages/angular-messages.min.js"></script>
 <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
+<script type="text/javascript" src="../node_modules/md-data-table/dist/md-data-table-templates.js"></script>
+<script type="text/javascript" src="../node_modules/md-data-table/dist/md-data-table.js"></script>
 
-<!-- icons -->
+<!-- remote cdn JavaScript -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
-
-<!-- custom modules -->
-<script src="modules/users/Users.js"></script>
-<script src="modules/users/UserController.js"></script>
-<script src="modules/users/UserService.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>-->
 
 <!-- main application entry point -->
 <script src="app.js"></script>
 <script src="core.ctrl.js"></script>
-
-<!-- application data services -->
-<script src="services/ser.inventory.js"></script>
-<script src="services/ser.rsm.auth.js"></script>
-
-<!-- application data controllers -->
-<script src="states/inventory/ctrl.inventory.js"></script>
-<script src="states/inventory/ctrl.add-inv.js"></script>
-<script src="states/auth/ctrl.auth.js"></script>
+<!-- data controllers -->
 <script src="states/home/ctrl.home.js"></script>
-<script src="states/view-test/ctrl.rsm-t.js"></script>
+<!-- data services -->
+<script src="services/ser.pick.js"></script>
 
 </body>
 </html>

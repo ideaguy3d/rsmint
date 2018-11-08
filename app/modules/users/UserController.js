@@ -70,12 +70,14 @@
              */
             function ContactSheetController($mdBottomSheet) {
                 this.user = selectedUser;
+
                 this.items = [
-                    {name: 'Phone', icon: 'phone', icon_url: 'assets/svg/phone.svg'},
-                    {name: 'Twitter', icon: 'twitter', icon_url: 'assets/svg/twitter.svg'},
-                    {name: 'Google+', icon: 'google_plus', icon_url: 'assets/svg/google_plus.svg'},
-                    {name: 'Hangout', icon: 'hangouts', icon_url: 'assets/svg/hangouts.svg'}
+                    {name: 'Special Algorithm', icon: 'phone', icon_url: 'assets/svg/phone.svg'},
+                    {name: 'Sub Application', icon: 'twitter', icon_url: 'assets/svg/twitter.svg'},
+                    {name: 'Other tool', icon: 'google_plus', icon_url: 'assets/svg/google_plus.svg'},
+                    {name: 'Custom Data Report', icon: 'hangouts', icon_url: 'assets/svg/hangouts.svg'}
                 ];
+
                 this.contactUser = function (action) {
                     // The actually contact process has not been implemented...
                     // so just hide the bottomSheet

@@ -23,6 +23,7 @@
     "angular-material": "^1.1.0",
     "angular-messages": "^1.5.5",
     "angular-route": "^1.5.5",
+    "md-data-table": "^2.2.0",
     "npm": "^6.4.1"
   },
   "devDependencies": {

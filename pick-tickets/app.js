@@ -1,0 +1,42 @@
+angular.module('rsm-pick',
+    ['ngMaterial', 'ngRoute', 'ngMessages', 'ngMdIcons',
+        'ngAnimate']) // , "material.svgAssetsCache"
+    .config(function ($mdThemingProvider, $mdIconProvider) {
+        let redstoneRedMap = $mdThemingProvider.extendPalette('red', {
+            '500': '#434343',
+            'contrastDefaultColor': 'dark'
+        });
+
+        $mdThemingProvider.definePalette('redstoneRed', redstoneRedMap);
+        $mdThemingProvider.theme('default').primaryPalette('redstoneRed');
+
+        $mdIconProvider
+            .defaultIconSet("./assets/svg/avatars.svg", 128)
+            .icon("menu", "./assets/svg/menu.svg", 24)
+            .icon("share", "./assets/svg/share.svg", 24)
+            .icon("google_plus", "./assets/svg/google_plus.svg", 512)
+            .icon("hangouts", "./assets/svg/hangouts.svg", 512)
+            .icon("twitter", "./assets/svg/twitter.svg", 512)
+            .icon("phone", "./assets/svg/phone.svg", 512);
+
+        $mdThemingProvider.theme('default')
+        //.primaryPalette('grey')
+        //.accentPalette('red')
+        //.backgroundPalette('red')
+        //.dark()
+        ;
+
+    })
+    .config(['$routeProvider', '$locationProvider',
+        function ($routeProvider, $locationProvider) {
+            $routeProvider
+                // 1, controller: 'HomeCtrl'
+                .when('/', {
+                    templateUrl: 'states/home/view.home.html',
+                    controller: 'HomeCtrl',
+                    controllerAs: 'homeCtrl'
+                });
+
+            // $locationProvider.otherwise('/');
+        }]
+    );

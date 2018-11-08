@@ -41,7 +41,7 @@
                             vm.loginError = false;
                             $rootScope.rUserIsAuthenticated = true;
                             //console.log("RSM_SUCCESS - user is good to go :)");
-                            $location.path("/home");
+                            $location.path("/");
                         }
                     }
                     else {
