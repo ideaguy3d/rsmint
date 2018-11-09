@@ -11,7 +11,7 @@
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
     <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/>
     <link rel="stylesheet" href="../node_modules/md-data-table/dist/md-data-table-style.css">
-    <link rel="stylesheet" href="assets/app.css"/>
+    <link rel="stylesheet" href="assets/picks.app.css"/>
 
     <style type="text/css">
         /**
@@ -27,14 +27,18 @@
 
 <body ng-app="rsm-pick">
 
-<section ng-controller="CoreCtrl" layout="column" ng-cloak layout-padding layout-margin>
-
-    <div style="font-size: 12px;padding:5px;margin:0; margin-bottom:8px; line-height:18px; border: 1px solid #c4c4c4;background: white;">
+<section ng-controller="CoreCtrl" layout="column" ng-cloak layout-padding layout-margin class="rsm-zero-top">
+    <!--
+     <div style="font-size: 12px;padding:5px;margin:0; margin-bottom:8px; line-height:18px; border: 1px solid #c4c4c4;background: white;">
         <ng-md-icon icon="info" size="16" style="float:left;fill:#479BFF;margin-right: 5px;"></ng-md-icon>
         <span><i>Search</i> feature works with non-ajax/non-promise data. You have the possibility to change the dataset in your table which then immediately respond on that change.</span>
     </div>
+     -->
 
-    <h1 class="rsm-text-center">Pick Tickets</h1>
+    <div layout="row" layout-align="center center" class="rsm-zero-top">
+        <img src="../images/redstone.png" alt="Redstone Print and Mail" height="70px">
+        <h1 class="rsm-text-center rsm-pick-ticket-title">Pick Tickets</h1>
+    </div>
 
     <md-card style="margin:0">
         <md-input-container style="margin:15px;">
@@ -47,20 +51,42 @@
         </div>
     </md-card>
 
-    <mdt-table mdt-row="{'data': filteredItems,
-                     'table-row-id-key': 'id',
-                     'column-keys': ['coordinator_name', 'due_date', 'quantity', 'paper_description', 'envelope_description', 'paper_image_url', 'envelope_image_url']}">
+    <mdt-table mdt-row="{'data': filteredItems, 'table-row-id-key': 'id',
+                     'column-keys': [
+                        'mark_complete',
+                        'coordinator_name', 'due_date', 'rquantity', 'paper_description',
+                        'envelope_description', 'paper_image_url', 'envelope_image_url'
+                     ]}">
+
         <!-- table rows -->
         <mdt-header-row>
+            <mdt-column align-rule="left">Mark Complete</mdt-column>
             <mdt-column align-rule="left">Coordinator Name</mdt-column>
-            <mdt-column align-rule="right">Job Number</mdt-column>
-            <mdt-column align-rule="right">Stock Location</mdt-column>
-            <mdt-column align-rule="right">Image</mdt-column>
             <mdt-column align-rule="right">Due Date</mdt-column>
-            <mdt-column align-rule="right">Job Number</mdt-column>
-            <mdt-column align-rule="right">Inventory Left</mdt-column>
-            <mdt-column align-rule="right">SKU</mdt-column>
+            <mdt-column align-rule="right">Quantity</mdt-column>
+            <mdt-column align-rule="left">Paper Description</mdt-column>
+            <mdt-column align-rule="left">Envelope Description</mdt-column>
+            <mdt-column align-rule="center">Paper Image</mdt-column>
+            <mdt-column align-rule="center">Envelope Image</mdt-column>
         </mdt-header-row>
+
+        <mdt-custom-cell column-key="mark_complete">
+            <md-button class="md-fab md-primary" aria-label="done">
+                <ng-md-icon icon="done"></ng-md-icon>
+            </md-button>
+        </mdt-custom-cell>
+
+        <mdt-custom-cell column-key="paper_image_url">
+            <div class="rsm-crop">
+                <img ng-src="{{value}}" alt="{{clientScope.getNutritionWithId(rowId).name}}"/>
+            </div>
+        </mdt-custom-cell>
+
+        <mdt-custom-cell column-key="envelope_image_url">
+            <div class="rsm-crop">
+                <img ng-src="{{value}}" alt="{{clientScope.getNutritionWithId(rowId).name}}"/>
+            </div>
+        </mdt-custom-cell>
     </mdt-table>
 </section>
 
@@ -80,10 +106,11 @@
 <!-- remote cdn JavaScript -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
 
 <!-- main application entry point -->
-<script src="app.js"></script>
-<script src="core.ctrl.js"></script>
+<script src="picks.app.js"></script>
+<script src="picks.core.ctrl.js"></script>
 <!-- data controllers -->
 <script src="states/home/ctrl.home.js"></script>
 <!-- data services -->

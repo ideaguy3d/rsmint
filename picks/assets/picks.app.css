@@ -193,5 +193,25 @@ ng-md-icon.rsm-sidenav-icon > svg {
     height: 700px;
 }
 
+.rsm-crop {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
+
+.rsm-crop img {
+    height: 70px;
+}
+
+.rsm-pick-ticket-title {
+    font-size: 44px;
+    margin-left: 24px;
+}
+
+.rsm-zero-top {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
 
 
+/**/

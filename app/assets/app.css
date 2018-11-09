@@ -193,5 +193,15 @@ ng-md-icon.rsm-sidenav-icon > svg {
     height: 700px;
 }
 
+.rsm-crop {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
+
+.rsm-crop img {
+    height: 70px;
+}
+
 
 
