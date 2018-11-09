@@ -35,7 +35,7 @@ angular.module('rsm-pick', [
             $routeProvider
                 // 1, controller: 'HomeCtrl'
                 .when('/', {
-                    templateUrl: 'states/home/view.home.html'//,
+                    templateUrl: 'states/home/view.home.html',
                     //controller: 'HomeCtrl',
                     //controllerAs: 'homeCtrl'
                 });

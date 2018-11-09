@@ -7,20 +7,29 @@
     function CoreCtrlClass($scope, $location, $rootScope) {
         // get a timestamp for logging while developing:
         let today = getCurrentDate();
-        // super important root scope
-        $rootScope.R_appLocal = true;
-        // core ctrl scope
-        $scope.ccBusinessIntelligence = false;
-        $scope.ccToggleBusinessIntelligence = function () {
-            $scope.ccBusinessIntelligence = !$scope.ccBusinessIntelligence;
-            if ($scope.ccBusinessIntelligence) {
-                $location.path('/business-intelligence');
+
+        $scope.ccMockData = [
+            {
+                id: 601,
+                coordinator_name: "Tori",
+                due_date: '2018-11-09 12:17:16.977',
+                quantity: 5144,
+                paper_description: '',
+                envelope_description: '',
+                paper_image_url: 'http://localhost/rsmint/images/paper.jpg',
+                envelope_image_url: 'http://localhost/rsmint/images/envelope.jpg'
             }
-            else {
-                $location.path('/');
+            ,{
+                id: 601,
+                coordinator_name: "Tori",
+                due_date: '2018-11-09 12:17:16.977',
+                quantity: 5144,
+                paper_description: '',
+                envelope_description: '',
+                paper_image_url: 'http://localhost/rsmint/images/paper.jpg',
+                envelope_image_url: 'http://localhost/rsmint/images/envelope.jpg'
             }
-            console.log("rsm - business intelligence should get toggled...");
-        };
+        ];
 
         activate();
 
