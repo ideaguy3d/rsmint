@@ -33,11 +33,11 @@ angular.module('rsm-pick', [
     .config(['$routeProvider', '$locationProvider',
         function ($routeProvider, $locationProvider) {
             $routeProvider
-            // 1, controller: 'HomeCtrl'
+                // 1, controller: 'HomeCtrl'
                 .when('/', {
-                    templateUrl: 'states/home/view.home.html',
-                    controller: 'HomeCtrl',
-                    controllerAs: 'homeCtrl'
+                    templateUrl: 'states/home/view.home.html'//,
+                    //controller: 'HomeCtrl',
+                    //controllerAs: 'homeCtrl'
                 });
 
             // $locationProvider.otherwise('/');
