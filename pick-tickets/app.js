@@ -1,6 +1,9 @@
-angular.module('rsm-pick',
-    ['ngMaterial', 'ngRoute', 'ngMessages', 'ngMdIcons',
-        'ngAnimate']) // , "material.svgAssetsCache"
+angular.module('rsm-pick', [
+    'ngMaterial', 'ngRoute',
+    'ngSanitize',
+    'ngMessages', 'ngMdIcons', 'ngAnimate',
+    'mdDataTable'
+]) // , "material.svgAssetsCache" // old dependencies
     .config(function ($mdThemingProvider, $mdIconProvider) {
         let redstoneRedMap = $mdThemingProvider.extendPalette('red', {
             '500': '#434343',
@@ -30,7 +33,7 @@ angular.module('rsm-pick',
     .config(['$routeProvider', '$locationProvider',
         function ($routeProvider, $locationProvider) {
             $routeProvider
-                // 1, controller: 'HomeCtrl'
+            // 1, controller: 'HomeCtrl'
                 .when('/', {
                     templateUrl: 'states/home/view.home.html',
                     controller: 'HomeCtrl',

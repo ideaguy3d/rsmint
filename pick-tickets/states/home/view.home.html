@@ -1,14 +1,16 @@
 <!-- ul for 'user list' -->
 <section>
     <!-- Header at the top -->
-    <div layout="row" layout-align="center center">
+    <div layout="column" layout-align="center center">
         <h1>Pick Ticket App</h1>
+        <p> || test = {{homeCtrl.mockData[0]}} || </p>
     </div>
-    <!--  -->
+
+    <!-- The Actual Data Table -->
     <div layout-margin>
         <div style="font-size: 12px;padding:5px;margin:0; margin-bottom:8px; line-height:18px; border: 1px solid #c4c4c4;background: white;">
             <ng-md-icon icon="info" size="16" style="float:left;fill:#479BFF;margin-right: 5px;"></ng-md-icon>
-            <span><i>Search</i> feature works with non-ajax/non-promise data. You have the possibility to change the dataset in your tablewhich then immediately respond on that change.</span>
+            <span><i>Search</i> feature works with non-ajax/non-promise data. You have the possibility to change the dataset in your table which then immediately respond on that change.</span>
         </div>
         <md-card style="margin:0">
             <md-input-container style="margin:15px;">
@@ -17,7 +19,7 @@
             </md-input-container>
 
             <div ng-hide="true">
-                {{(filteredItems = (nutritionList | filter: filterName))}}
+                {{(filteredItems = (homeCtrl.mockData | filter: filterName))}}
             </div>
         </md-card>
         <mdt-table mdt-row="{
@@ -25,6 +27,7 @@
                         'table-row-id-key': 'id',
                         'column-keys': ['name', 'calories', 'fat', 'carbs', 'protein', 'sodium', 'calcium', 'iron']
                       }">
+            <!-- table rows -->
             <mdt-header-row>
                 <mdt-column align-rule="left">Dessert (100g serving)</mdt-column>
                 <mdt-column align-rule="right">Calories</mdt-column>
