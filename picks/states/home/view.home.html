@@ -1,37 +1,6 @@
 <!-- The Actual Data Table -->
 <div ng-controller="HomeCtrl" layout="column" layout-padding layout-margin>
-    <div style="font-size: 12px;padding:5px;margin:0; margin-bottom:8px; line-height:18px; border: 1px solid #c4c4c4;background: white;">
-        <ng-md-icon icon="info" size="16" style="float:left;fill:#479BFF;margin-right: 5px;"></ng-md-icon>
-        <span><i>Search</i> feature works with non-ajax/non-promise data. You have the possibility to change the dataset in your table which then immediately respond on that change.</span>
-    </div>
 
-    <h1>Pick Tickets</h1>
+    <h1>Pick Tickets app</h1>
 
-    <md-card style="margin:0">
-        <md-input-container style="margin:15px;">
-            <label>Filter by search</label>
-            <input type="text" ng-model="filterName">
-        </md-input-container>
-
-        <div ng-hide="true">
-            {{(filteredItems = (mockData | filter: filterName))}}
-        </div>
-    </md-card>
-    <mdt-table mdt-row="{
-                        'data': filteredItems,
-                        'table-row-id-key': 'id',
-                        'column-keys': ['name', 'calories', 'fat', 'carbs', 'protein', 'sodium', 'calcium', 'iron']
-                      }">
-        <!-- table rows -->
-        <mdt-header-row>
-            <mdt-column align-rule="left">Coordinator Name</mdt-column>
-            <mdt-column align-rule="right">Job Number</mdt-column>
-            <mdt-column align-rule="right">Stock Location</mdt-column>
-            <mdt-column align-rule="right">Image</mdt-column>
-            <mdt-column align-rule="right">Due Date</mdt-column>
-            <mdt-column align-rule="right">Job Number</mdt-column>
-            <mdt-column align-rule="right">Inventory Left</mdt-column>
-            <mdt-column align-rule="right">SKU</mdt-column>
-        </mdt-header-row>
-    </mdt-table>
 </div>

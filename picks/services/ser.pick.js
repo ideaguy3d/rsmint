@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    angular.module('rsm-pick').factory('rsmInventoryService', [
+    angular.module('rsm-pick').factory('rsmPickService', [
         '$http',
         InventoryServiceClass
     ]);
