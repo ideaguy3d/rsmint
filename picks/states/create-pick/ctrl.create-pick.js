@@ -8,7 +8,7 @@
 
     function CreatePickCtrlClass($rootScope, $scope, $mdToast, rsmPickService) {
         const vm = this;
-        vm.viewTitle = "Create a Pick Ticket";
+        vm.viewTitle = "Create a Pick ";
     }
 
 }());

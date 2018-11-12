@@ -18,15 +18,15 @@
         </md-input-container>
 
         <div ng-hide="true">
-            {{(filteredItems = (ccMockData | filter: filterName))}}
+            {{(filteredItems = (ccPrintTickets | filter: filterName))}}
         </div>
     </md-card>
 
     <mdt-table mdt-row="{'data': filteredItems, 'table-row-id-key': 'id',
                      'column-keys': [
                         'mark_complete',
-                        'coordinator_name', 'due_date', 'rquantity', 'paper_description',
-                        'envelope_description', 'paper_image_url', 'envelope_image_url'
+                        'coordinator_name', 'due_date', 'quantity', 'paper_description',
+                        'envelope_description', 'paper_img_url', 'envelope_img_url'
                      ]}">
 
         <!-- table rows -->
@@ -52,13 +52,13 @@
             </div>
         </mdt-custom-cell>
 
-        <mdt-custom-cell column-key="paper_image_url">
+        <mdt-custom-cell column-key="paper_img_url">
             <div class="rsm-crop">
                 <img ng-src="{{value}}" alt="{{clientScope.getNutritionWithId(rowId).name}}"/>
             </div>
         </mdt-custom-cell>
 
-        <mdt-custom-cell column-key="envelope_image_url">
+        <mdt-custom-cell column-key="envelope_img_url">
             <div class="rsm-crop">
                 <img ng-src="{{value}}" alt="{{clientScope.getNutritionWithId(rowId).name}}"/>
             </div>

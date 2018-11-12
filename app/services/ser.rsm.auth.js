@@ -14,10 +14,12 @@
             // encode GET params
             let username = encodeURIComponent(loginAuthObj.username);
             let qqq = encodeURIComponent(loginAuthObj.qqq);
+
             let getRequestUri = uriRsmAuth +
                 // ALWAYS '?' for 1st query string param
                 '?username=' + username +
-                '&qqq=' + qqq;
+                '&qqq=' + qqq
+            ;
 
             if ($rootScope.R_appLocal) {
                 console.log("will make HTTP GET request to:");
