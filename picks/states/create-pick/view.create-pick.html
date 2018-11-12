@@ -5,35 +5,54 @@
     </div>
 
     <form ng-submit="$event.preventDefault()">
-        <!-- description -->
         <div layout-gt-xs="row">
             <md-input-container class="md-block" flex-gt-xs>
-                <label>Job</label>
-                <input type="text" ng-model="cCreatePick.stockDescription">
+                <label>Job Number</label>
+                <input type="text" ng-model="cCreatePick.jobNumber">
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Due Date</label>
+                <input type="text" ng-model="cCreatePick.dueDate">
             </md-input-container>
         </div>
 
-        <!-- stock type & job type  -->
+        <!-- coordinatorName & dueDate -->
         <div layout-gt-xs="row">
             <md-input-container class="md-block" flex-gt-xs>
-                <label>Stock Type e.g.</label>
-                <input type="text" ng-model="cCreatePick.stockType">
+                <label>Coordinator Name</label>
+                <input type="text" ng-model="cCreatePick.coordinatorName">
             </md-input-container>
+
             <md-input-container class="md-block" flex-gt-xs>
-                <label>Job Type</label>
-                <input type="text" ng-model="cCreatePick.jobType">
+                <label>Due Date</label>
+                <input type="text" ng-model="cCreatePick.dueDate">
             </md-input-container>
         </div>
 
-        <!-- paper stock & warehouse location -->
+        <!-- quantity & paperDescription  -->
         <div layout-gt-xs="row">
             <md-input-container class="md-block" flex-gt-xs>
-                <label>Paper Stock</label>
-                <input type="text" ng-model="cCreatePick.paperStock">
+                <label>Quantity</label>
+                <input type="text" ng-model="cCreatePick.quantity">
             </md-input-container>
+
             <md-input-container class="md-block" flex-gt-xs>
-                <label>Warehouse Location</label>
-                <input type="text" ng-model="cCreatePick.warehouseLocation">
+                <label>Description of paper</label>
+                <input type="text" ng-model="cCreatePick.paperDescription">
+            </md-input-container>
+        </div>
+
+        <!-- envelopeDescription & envelopeImgUrl -->
+        <div layout-gt-xs="row">
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Description of Envelope</label>
+                <input type="text" ng-model="cCreatePick.envelopeDescription">
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Envelope Image Url</label>
+                <input type="text" ng-model="cCreatePick.envelopeImgUrl">
             </md-input-container>
         </div>
     </form>
@@ -45,7 +64,7 @@
             <!-- style="fill: white" -->
             <ng-md-icon icon="send" size="32" style="fill: white"></ng-md-icon>
         </md-button>
-        <p><b>{{"Send Pick Ticket "+cCreatePick.totalInventoryAdded}} (:</b></p>
+        <p><b>{{"Send Pick Ticket for Job "+cCreatePick.jobNumber}} (:</b></p>
     </div>
 
 </section>
