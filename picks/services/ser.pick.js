@@ -27,11 +27,11 @@
             let request = uri + '/create/v1?' +
                 'coordinatorName=' + coordinatorName +
                 '&dueDate=' + dueDate +
-                '&quantity' + quantity +
-                '&paperDescription' + paperDescription +
-                '&envelopeDescription' + envelopeDescription +
-                '&paperImgUrl' + paperImgUrl +
-                '&envelopeImgUrl' + envelopeImgUrl
+                '&quantity=' + quantity +
+                '&paperDescription=' + paperDescription +
+                '&envelopeDescription=' + envelopeDescription +
+                '&paperImgUrl=' + paperImgUrl +
+                '&envelopeImgUrl=' + envelopeImgUrl
             ;
 
             if ($rootScope.R_appLocal) {

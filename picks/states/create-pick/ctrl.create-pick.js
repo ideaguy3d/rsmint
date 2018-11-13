@@ -9,10 +9,13 @@
     function CreatePickCtrlClass($rootScope, $scope, $mdToast, rsmPickService) {
         const vm = this;
         let pickTicketModel = {};
+        $rootScope.R_appLocal = true;
 
         vm.viewTitle = 'Create a Pick ';
         vm.showPickForm = true;
         vm.requestStatus = '';
+        vm.showBoxOne = false;
+        vm.showBoxTwo = false;
         //-- View model data bindings:
         vm.coordinatorName = '';        // 1
         vm.dueDate = '';                // 2
@@ -28,6 +31,7 @@
 
         function sendPickTicket() {
             pickTicketModel = {
+                jobNumber: vm.jobNumber,
                 coordinatorName: vm.coordinatorName,
                 dueDate: vm.dueDate,
                 quantity: vm.quantity,
@@ -43,17 +47,21 @@
                 console.log("coordinator name = " + vm.coordinatorName);
             }
 
-            rsmPickService.createPickTicket(pickTicketModel).then(function (res) {
-                console.log("response from createPickTicket app:");
-                console.log(res);
-                vm.requestStatus = "Your Pick ticket was sent ^_^";
-                vm.showPickForm = false;
-            }).catch(function (err) {
-                console.log('__>> RSM_ERROR: ');
-                console.log(err);
-                vm.requestStatus = "Uh oh, there was an error. Refresh page & Try again";
-                vm.showPickForm = false;
-            });
+            if(pickTicketModel.jobNumber) {
+                rsmPickService.createPickTicket(pickTicketModel).then(function (res) {
+                    console.log("response from createPickTicket app:");
+                    console.log(res);
+                    vm.requestStatus = "Your Pick ticket was sent ^_^";
+                    vm.showPickForm = false;
+                }).catch(function (err) {
+                    console.log('__>> RSM_ERROR: ');
+                    console.log(err);
+                    vm.requestStatus = "Uh oh, there was an error. Refresh page & Try again";
+                    vm.showPickForm = false;
+                });
+            } else {
+                vm.requestStatus = "Please add a job number."
+            }
         }
 
     }

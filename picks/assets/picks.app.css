@@ -213,7 +213,7 @@ ng-md-icon.rsm-sidenav-icon > svg {
     padding-top: 0 !important;
 }
 
-.rsm-round-btn{
+.rsm-round-btn {
     display: inline-block;
     text-decoration: none;
     background: #434343;
@@ -229,9 +229,56 @@ ng-md-icon.rsm-sidenav-icon > svg {
     cursor: pointer;
 }
 
-.rsm-round-btn:hover{
+.rsm-round-btn:hover {
     background: #ad5248;
 }
+
+.box-one {
+    font-family: sans-serif;
+    margin: 10px 0 20px 0;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #8e2f33;
+    color: #fff;
+    width: 75px;
+    height: 25px;
+    border-radius: 4px;
+
+    /* Animation code */
+    transition: all linear 0.125s;
+}
+
+.box-one.ng-hide {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all linear 0.125s;
+}
+
+.rsm-form-container {
+    /* Animation code */
+    transition: all linear 0.125s;
+}
+
+.rsm-form-container.ng-hide {
+    opacity: 0;
+    transform: scale(0.8);
+    /*transition: all linear 0.125s;*/
+}
+
+.rsm-request-status {
+    color: #434343;
+    transition: all linear 0.25s;
+}
+
+.rsm-request-status.ng-hide {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+
+
+
+
 
 
 /**/

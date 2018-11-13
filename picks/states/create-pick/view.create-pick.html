@@ -4,7 +4,12 @@
         <img src="../images/ticket.png" alt="pick ticket" height="70px">
     </div>
 
-    <div ng-if="cCreatePick.showPickForm">
+    <!-- send pick ticket button -->
+    <div ng-hide="!cCreatePick.requestStatus" class="rsm-request-status">
+        <h2>{{cCreatePick.requestStatus}}</h2>
+    </div>
+
+    <div ng-hide="!cCreatePick.showPickForm" class="rsm-form-container">
         <form ng-submit="$event.preventDefault()">
             <!-- jobNumber & coordinatorName -->
             <div layout-gt-xs="row">
@@ -69,12 +74,4 @@
             <p><b>{{ "Send Pick Ticket for Job " + cCreatePick.jobNumber }} (:</b></p>
         </div>
     </div>
-
-    <div ng-if="!cCreatePick.showPickForm">
-        <h2>Status = {{cCreatePick.requestStatus}}</h2>
-    </div>
-
-    <!-- test to make sure data is binding -->
-    <!--<p><small>{{cCreatePick.dueDate + ", " + cCreatePick.quantity + ", " + cCreatePick.paperDescription}}</small></p>-->
-    <p><small>{{"app local = " + R_appLocal}}</small></p>
 </section>
