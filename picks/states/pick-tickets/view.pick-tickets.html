@@ -24,13 +24,14 @@
 
     <mdt-table mdt-row="{'data': filteredItems, 'table-row-id-key': 'id',
                      'column-keys': [
-                        'mark_complete',
+                        'job_number', 'mark_complete',
                         'coordinator_name', 'due_date', 'quantity', 'paper_description',
                         'envelope_description', 'paper_img_url', 'envelope_img_url'
                      ]}">
 
         <!-- table rows -->
         <mdt-header-row>
+            <mdt-column align-rule="left">Job #</mdt-column>
             <mdt-column align-rule="left">Mark Complete</mdt-column>
             <mdt-column align-rule="left">Coordinator Name</mdt-column>
             <mdt-column align-rule="right">Due Date</mdt-column>
@@ -42,11 +43,6 @@
         </mdt-header-row>
 
         <mdt-custom-cell column-key="mark_complete">
-            <!-- md-button is breaking due to an ng-transclude error --
-            <md-button class="md-fab md-primary" aria-label="done">
-                <ng-md-icon icon="done"></ng-md-icon>
-            </md-button>
-            -->
             <div class="rsm-round-btn" ng-click="clientScope.ccMarkComplete(this)">
                 <ng-md-icon icon="done" size="32" style="fill: #FFFFFF;position: relative;top: 11px;"></ng-md-icon>
             </div>

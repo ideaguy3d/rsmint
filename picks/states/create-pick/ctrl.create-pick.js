@@ -32,7 +32,7 @@
         function sendPickTicket() {
             let isoDate = vm.dueDate;
             isoDate = isoDate.toISOString();
-            
+
             pickTicketModel = {
                 jobNumber: vm.jobNumber,
                 coordinatorName: vm.coordinatorName,

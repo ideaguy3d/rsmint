@@ -32,9 +32,9 @@
                 </md-input-container>
 
 
-                <div layout="row" layout-align="center center" class="md-block rsm-text-center" flex-gt-xs>
+                <div layout="row" layout-align="start center" class="md-block rsm-text-center" flex-gt-xs>
                     <!--<input type="text" ng-model="cCreatePick.dueDate">-->
-                    <h4>Due Date</h4>
+                    <h4>&nbsp;&nbsp; Due Date</h4>
                     <md-datepicker ng-model="cCreatePick.dueDate" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
                 </div>
             </div>
@@ -70,16 +70,12 @@
         <div layout-gt-xs="row" layout-align="start center">
             <md-button class="md-fab md-primary rsm-btn32-icon" aria-label="Add Inventory Item"
                        ng-click="cCreatePick.sendPickTicket()">
-                <!-- style="fill: white" -->
+                <!-- style = "fill: white" -->
                 <ng-md-icon icon="send" size="32" style="fill: white"></ng-md-icon>
             </md-button>
-            <p>Send Pick Ticket for Job <b>{{cCreatePick.jobNumber }}</b>
-                &nbsp;&nbsp;<ng-md-icon icon="face"></ng-md-icon></p>
+            <p>Send Pick Ticket for Job <b>{{cCreatePick.jobNumber }}</b>&nbsp;&nbsp;<ng-md-icon icon="face"></ng-md-icon></p>
         </div>
     </div>
 
-    <md-divider></md-divider>
-    <p>
-        <small>{{cCreatePick.dueDate}}</small>
-    </p>
+    <!--<md-divider></md-divider>-->
 </section>

@@ -12,7 +12,8 @@
 
         rsmPickService.readPickTickets()
             .then(function (res) {
-                console.log("rsm - the data looks like: ", res.data);
+                console.log("rsm - the data looks like: ");
+                console.log(res.data);
                 $scope.ccPrintTickets = res.data;
             })
             .catch(function (err) {
