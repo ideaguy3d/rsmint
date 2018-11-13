@@ -27,7 +27,7 @@
         activate();
 
         function activate() {
-            console.log("Core Controller Activated ~ " + today);
+            console.log("Pick Ticket App Core Controller Activated ~ " + today);
         }
 
         function getCurrentDate() {

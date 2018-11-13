@@ -2,11 +2,11 @@
     "use strict";
 
     angular.module('rsm-pick').factory('rsmPickService', [
-        '$http',
+        '$http', '$rootScope',
         InventoryServiceClass
     ]);
 
-    function InventoryServiceClass($http) {
+    function InventoryServiceClass($http, $rootScope) {
         let localUri = 'http://localhost/ninja/app/pick/tickets';
         let productionUri = '';
         let uri = localUri;
