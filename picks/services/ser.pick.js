@@ -23,6 +23,7 @@
             let envelopeDescription = encodeURIComponent(pickTicket['envelopeDescription']);
             let paperImgUrl = encodeURIComponent(pickTicket['paperImgUrl']);
             let envelopeImgUrl = encodeURIComponent(pickTicket['envelopeImgUrl']);
+            let jobNumber = encodeURIComponent(pickTicket['jobNumber']);
 
             let request = uri + '/create/v1?' +
                 'coordinatorName=' + coordinatorName +
@@ -31,7 +32,8 @@
                 '&paperDescription=' + paperDescription +
                 '&envelopeDescription=' + envelopeDescription +
                 '&paperImgUrl=' + paperImgUrl +
-                '&envelopeImgUrl=' + envelopeImgUrl
+                '&envelopeImgUrl=' + envelopeImgUrl +
+                '&jobNumber=' + jobNumber
             ;
 
             if ($rootScope.R_appLocal) {

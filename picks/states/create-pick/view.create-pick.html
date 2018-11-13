@@ -6,7 +6,7 @@
 
     <!-- send pick ticket button -->
     <div ng-hide="!cCreatePick.requestStatus" class="rsm-request-status">
-        <h2>{{cCreatePick.requestStatus}}</h2>
+        <h2>{{cCreatePick.requestStatus + " for job " + typeof(cCreatePick.jobNumber).toString() + " " + cCreatePick.jobNumber}}</h2>
     </div>
 
     <div ng-hide="!cCreatePick.showPickForm" class="rsm-form-container">
