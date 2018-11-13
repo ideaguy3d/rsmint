@@ -16,9 +16,10 @@
         vm.requestStatus = '';
         vm.showBoxOne = false;
         vm.showBoxTwo = false;
+        vm.isOpen = false;
         //-- View model data bindings:
         vm.coordinatorName = '';        // 1
-        vm.dueDate = '';                // 2
+        vm.dueDate = new Date();        // 2
         vm.quantity = '';               // 3
         vm.paperDescription = '';       // 4
         vm.envelopeDescription = '';    // 5
@@ -26,14 +27,16 @@
         vm.envelopeImgUrl = '';         // 7
         vm.jobNumber = '';              // 8
 
-
         vm.sendPickTicket = sendPickTicket;
 
         function sendPickTicket() {
+            let isoDate = vm.dueDate;
+            isoDate = isoDate.toISOString();
+            
             pickTicketModel = {
                 jobNumber: vm.jobNumber,
                 coordinatorName: vm.coordinatorName,
-                dueDate: vm.dueDate,
+                dueDate: isoDate,
                 quantity: vm.quantity,
                 paperDescription: vm.paperDescription,
                 envelopeDescription: vm.envelopeDescription,
