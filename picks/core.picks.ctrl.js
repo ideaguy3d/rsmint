@@ -1,34 +1,57 @@
 (function () {
     angular.module('rsm-pick').controller('CoreCtrl', [
-        '$scope', '$location', '$rootScope', 'rsmPickService',
+        '$scope', '$location', '$rootScope', 'rsmPickService', '$mdToast',
         CoreCtrlClass
     ]);
 
-    function CoreCtrlClass($scope, $location, $rootScope, rsmPickService) {
+    function CoreCtrlClass($scope, $location, $rootScope, rsmPickService, $mdToast) {
+
+        $rootScope.R_appLocal = true;
+
         // get a timestamp for logging while developing:
         let today = getCurrentDate();
-        $rootScope.R_appLocal = true;
+        let picksComplete;
+
         $scope.ccPrintTickets = [];
-
-        rsmPickService.readPickTickets()
-            .then(function (res) {
-                console.log("rsm - the data looks like: ");
-                console.log(res.data);
-                $scope.ccPrintTickets = res.data;
-            })
-            .catch(function (err) {
-                console.log("__>> RSM_ERROR: ", err);
-            });
-
-        $scope.ccMarkComplete = function (node) {
-            console.log("hide element, then make request to db, element = ");
-            console.log(node);
-        };
-
+        $scope.ccRowsSelected = 0;
+        $scope.ccMaximumRows = 5;
+        $scope.ccMarkComplete = markComplete;
+        $scope.ccRowSelectedCallback = rowSelectedCallback;
         activate();
 
+        // class functions
         function activate() {
-            console.log("Pick Ticket App Core Controller Activated ~ " + today);
+            rsmPickService.readPickTickets()
+                .then(function (res) {
+                    $scope.ccPrintTickets = res.data;
+                })
+                .catch(function (err) {
+                    console.log("__>> RSM_ERROR: ", err);
+                });
+        }
+
+        /**
+         * @param rows -
+         */
+        function markComplete(rows) {
+            $scope.ccRowsSelected = 0;
+            console.log("hide element, then make request to db, element = ");
+            console.log(rows);
+            $mdToast.show(
+                $mdToast.simple().content("Deleted row id(s): " + rows).hideDelay(3000)
+            );
+
+        }
+
+        /**
+         * @param rows - array that will retain state from mdDataTable
+         */
+        function rowSelectedCallback(rows) {
+            picksComplete = rows;
+            $scope.ccRowsSelected = rows.length;
+
+            console.log("current picks to mark complete:");
+            console.log(picksComplete);
         }
 
         function getCurrentDate() {

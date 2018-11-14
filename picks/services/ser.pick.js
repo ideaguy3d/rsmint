@@ -44,6 +44,10 @@
             return $http.get(request);
         }
 
+        function markPickComplete(completedPicks) {
+            
+        }
+
         return {
             readPickTickets: readPickTickets,
             createPickTicket: createPickTicket

@@ -1,8 +1,7 @@
 (function () {
     "use strict";
 
-    angular.module('rsm-app')
-        .factory('rsmAuthSer', ['$http', '$rootScope', RsmAuthSerClass]);
+    angular.module('rsm-app').factory('rsmAuthSer', ['$http', '$rootScope', RsmAuthSerClass]);
 
     function RsmAuthSerClass($http, $rootScope) {
         let production = 'http://192.168.7.17/ninja/app/q/inventory/login';

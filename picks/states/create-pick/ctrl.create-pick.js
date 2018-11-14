@@ -29,6 +29,7 @@
 
         vm.sendPickTicket = sendPickTicket;
 
+
         function sendPickTicket() {
             let isoDate = vm.dueDate;
             isoDate = isoDate.toISOString();
@@ -67,6 +68,6 @@
             }
         }
 
-    }
+    } // END OF: CreatePickTicketClass
 
 }());
