@@ -51,7 +51,7 @@
                 console.log("coordinator name = " + vm.coordinatorName);
             }
 
-            if(pickTicketModel.jobNumber) {
+            if (pickTicketModel.jobNumber) {
                 rsmPickService.createPickTicket(pickTicketModel).then(function (res) {
                     console.log("response from createPickTicket app:");
                     console.log(res);
@@ -63,7 +63,8 @@
                     vm.requestStatus = "Uh oh, there was an error. Refresh page & Try again";
                     vm.showPickForm = false;
                 });
-            } else {
+            }
+            else {
                 vm.requestStatus = "Please add a job number."
             }
         }

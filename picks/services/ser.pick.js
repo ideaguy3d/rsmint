@@ -8,7 +8,7 @@
 
     function InventoryServiceClass($http, $rootScope) {
         let localUri = 'http://localhost/ninja/app/pick/tickets';
-        let productionUri = '';
+        let productionUri = '192.168.7.17/ninja/app/pick/tickets';
         let uri = localUri;
 
         function readPickTickets() {
@@ -45,12 +45,27 @@
         }
 
         function markPickComplete(completedPicks) {
-            
+            // ["42","1","7"]
+            // dynamically generate API URI
+            let limit = completedPicks.length;
+            let request = uri + '/mark/complete';
+
+            for (let i = 0; i < limit; i++) {
+                let item = completedPicks[i];
+                let pickId = encodeURIComponent(item);
+                request += ('/' + pickId);
+            }
+
+            console.log("will send request to:");
+            console.log(request);
+
+            return $http.get(request);
         }
 
         return {
             readPickTickets: readPickTickets,
-            createPickTicket: createPickTicket
+            createPickTicket: createPickTicket,
+            markPickComplete: markPickComplete
         }
     }
 }());

@@ -7,7 +7,7 @@
     <!-- the filter search box -->
     <md-card style="margin:0">
         <md-input-container style="margin:15px;">
-            <label>Filter by search</label>
+            <label>Filter by Coordinator</label>
             <input type="text" ng-model="filterName">
         </md-input-container>
 
@@ -24,7 +24,7 @@
             {{ ccRowsSelected }} / {{ ccMaximumRows }} rows selected for deletion
         </h3>
         <div ng-if="ccRowsSelected === ccMaximumRows">
-            <h2 style="color: #8e2f33; text-align: center">
+            <h2 style="color: #d9464a; text-align: center">
                 LIMIT REACHED - won't be able to update Database with more rows
             </h2>
         </div>

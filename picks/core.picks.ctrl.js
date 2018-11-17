@@ -37,10 +37,20 @@
             $scope.ccRowsSelected = 0;
             console.log("hide element, then make request to db, element = ");
             console.log(rows);
-            $mdToast.show(
-                $mdToast.simple().content("Deleted row id(s): " + rows).hideDelay(3000)
-            );
 
+            $mdToast.show($mdToast.simple().content("Deleted row id(s): " + rows).hideDelay(3000));
+
+            if ($scope.ccRowsSelected <= 5) {
+                rsmPickService.markPickComplete(picksComplete)
+                    .then(function (res) {
+                        console.log("response from markPickComplete app:");
+                        console.log(res);
+                    })
+                    .catch(function (err) {
+                        console.log('__>> RSM_ERROR: ');
+                        console.log(err);
+                    });
+            }
         }
 
         /**
