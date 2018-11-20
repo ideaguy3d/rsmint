@@ -11,7 +11,13 @@
     ) {
         const vm = this;
         let pickTicketModel = {};
+        // rootScope bindings
         $rootScope.R_appLocal = true;
+        // scope bindings
+        $scope.pracDialogStatus = "";
+        $scope.customFullscreen = false;
+        $scope.createPickEnvelopeUrlTidCancelled = '';
+        $scope.createPickImageUrlTidCancelled = '';
 
         vm.imgEnvelopesUrls = [
             {
@@ -48,15 +54,12 @@
                 description: '#10 Double Window First Class 1946'
             }
         ];
-
         vm.viewTitle = 'Create a Pick ';
         vm.showPickForm = true;
         vm.requestStatus = '';
         vm.showBoxOne = false;
         vm.showBoxTwo = false;
         vm.isOpen = false;
-        $scope.pracDialogStatus = "";
-        $scope.customFullscreen = false;
 
         //-- View model data bindings:
         vm.coordinatorName = '';        // 1
@@ -114,27 +117,21 @@
                 clickOutsideToClose: true,
                 fullscreen: vm.customFullscreen
             }).then(function (answer) {
-                $scope.pracDialogStatus = 'You said the information was "' + answer + '".';
+                $scope.createPickEnvelopeUrlTid = 'Envelope tid = "' + answer + '".';
+
             }, function () {
-                $scope.pracDialogStatus = "You cancelled the dialog.";
+                $scope.createPickEnvelopeUrlTidCancelled = "You cancelled the dialog.";
             });
 
             function EnvelopeDialogCtrl($scope, $mdDialog) {
                 $scope.createPickEnvelopeImages = vm.imgEnvelopesUrls;
 
-                $scope.hide = function () {
-                    $mdDialog.hide();
-                };
-
                 $scope.cancel = function () {
                     $mdDialog.cancel();
                 };
 
-                $scope.answer = function (answer) {
-                    $mdDialog.hide(answer);
-                };
-
                 $scope.createPickImageSelected = function (tid) {
+                    $mdDialog.hide(tid);
                     console.log("tid of envelope selected = " + tid);
                 };
             }

@@ -12,28 +12,29 @@
 
         <md-dialog-content>
             <div class="md-dialog-content">
-                <h2>zzzzzzzzz House Stock Images <b>iterate</b></h2>
+                <p style="margin-top: 0;">Hover over image with mouse to enlarge it.</p>
 
                 <div ng-repeat="envelope in createPickEnvelopeImages" class="rsm-dialog-images">
                     <div ng-click="createPickImageSelected(envelope.tid)">
-                        <img ng-src="{{envelope.url}}" alt="image" width="200px">
+                        <img ng-src="{{envelope.url}}" alt="image" width="200px" class="rsm-scale-hover">
                     </div>
                 </div>
             </div>
         </md-dialog-content>
 
-        <!-- buttons at bottom of dialog -->
+        <!-- buttons at bottom of dialog
         <md-dialog-actions layout="row">
             <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" md-autofocus>
                 More on Wikipedia
             </md-button>
             <span flex></span>
-            <md-button ng-click="answer('not useful')">
+            <md-button ng-click="createPickImageSelected('not useful')">
                 Not Useful
             </md-button>
             <md-button ng-click="answer('useful')">
                 Useful
             </md-button>
         </md-dialog-actions>
+        -->
     </form>
 </md-dialog>

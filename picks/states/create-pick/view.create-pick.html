@@ -81,7 +81,12 @@
                     </md-button>
                 </md-input-container>
             </div>
+            <p>{{createPickEnvelopeUrlTid}}</p>
         </form>
+
+        <div ng-if="createPickEnvelopeUrlTidCancelled || createPickImageUrlTidCancelled">
+            {{createPickEnvelopeUrlTidCancelled + "  " + createPickImageUrlTidCancelled}}
+        </div>
 
         <!-- submit button -->
         <div layout-gt-xs="row" layout-align="start center">

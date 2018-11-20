@@ -280,6 +280,14 @@ ng-md-icon.rsm-sidenav-icon > svg {
     margin: 8px;
 }
 
+.rsm-scale-hover {
+    transition: all 0.2s linear;
+}
+
+.rsm-scale-hover:hover {
+    transform: scale(2.0);
+}
+
 
 
 
