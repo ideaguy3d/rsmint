@@ -33,9 +33,10 @@
         vm.jobNumber = '';              // 8
 
         vm.sendPickTicket = sendPickTicket;
-        vm.showAdvanced = showAdvanced;
+        vm.showEvelopeImages = showEvelopeImages;
+        vm.showPaperImages = showPaperImages;
 
-        function showAdvanced(event) {
+        function showPaperImages(event) {
             $mdDialog.show({
                 controller: DialogCtrl,
                 templateUrl: 'states/pick-tickets/dialog.prac.html',
@@ -61,6 +62,43 @@
                 $scope.answer = function (answer) {
                     $mdDialog.hide(answer);
                 };
+
+                $scope.selectedImage = function (image) {
+
+                }
+            }
+        }
+
+        function showEvelopeImages(event) {
+            $mdDialog.show({
+                controller: DialogCtrl,
+                templateUrl: 'states/pick-tickets/dialog.prac.html',
+                parent: angular.element(document.body),
+                targetEvent: event,
+                clickOutsideToClose: true,
+                fullscreen: vm.customFullscreen
+            }).then(function (answer) {
+                $scope.pracDialogStatus = 'You said the information was "' + answer + '".';
+            }, function () {
+                $scope.pracDialogStatus = "You cancelled the dialog.";
+            });
+
+            function DialogCtrl($scope, $mdDialog) {
+                $scope.hide = function () {
+                    $mdDialog.hide();
+                };
+
+                $scope.cancel = function () {
+                    $mdDialog.cancel();
+                };
+
+                $scope.answer = function (answer) {
+                    $mdDialog.hide(answer);
+                };
+
+                $scope.selectedImage = function (image) {
+
+                }
             }
         }
 

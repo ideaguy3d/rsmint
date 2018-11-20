@@ -50,14 +50,6 @@
             <mdt-column align-rule="center">Envelope Image</mdt-column>
         </mdt-header-row>
 
-        <!-- // The check mark circle button:
-         <mdt-custom-cell column-key="mark_complete">
-            <div class="rsm-round-btn" ng-click="clientScope.ccMarkComplete(this)">
-                <ng-md-icon icon="done" size="32" style="fill: #FFFFFF;position: relative;top: 11px;"></ng-md-icon>
-            </div>
-        </mdt-custom-cell>
-         -->
-
         <mdt-custom-cell column-key="paper_img_url">
             <div class="rsm-crop">
                 <img ng-src="{{value}}" alt="{{clientScope.getNutritionWithId(rowId).name}}"/>

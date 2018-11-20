@@ -6,7 +6,8 @@
 
     <!-- send pick ticket button -->
     <div ng-hide="!cCreatePick.requestStatus" class="rsm-request-status">
-        <h2>{{cCreatePick.requestStatus + " for job " + typeof(cCreatePick.jobNumber).toString() + " " + cCreatePick.jobNumber}}</h2>
+        <h2>{{cCreatePick.requestStatus + " for job " + typeof(cCreatePick.jobNumber).toString() + " " +
+            cCreatePick.jobNumber}}</h2>
     </div>
 
     <div ng-hide="!cCreatePick.showPickForm" class="rsm-form-container">
@@ -36,7 +37,8 @@
                 <div layout="row" layout-align="start center" class="md-block rsm-text-center" flex-gt-xs>
                     <!--<input type="text" ng-model="cCreatePick.dueDate">-->
                     <h4>&nbsp;&nbsp; Due Date</h4>
-                    <md-datepicker ng-model="cCreatePick.dueDate" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
+                    <md-datepicker ng-model="cCreatePick.dueDate" md-placeholder="Enter date"
+                                   md-open-on-focus></md-datepicker>
                 </div>
             </div>
 
@@ -65,28 +67,21 @@
                     <input type="text" ng-model="cCreatePick.paperImgUrl">
                 </md-input-container>
             </div>
+
+            <div class="rsm-dialog-content" layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <md-button class="md-primary md-raised" ng-click="cCreatePick.showEvelopeImages($event)">
+                        <span style="color: #ffffff">Select Envelope Image</span>
+                    </md-button>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-xs>
+                    <md-button class="md-primary md-raised" ng-click="cCreatePick.showPaperImages($event)">
+                        <span style="color: #ffffff">Select Paper Image</span>
+                    </md-button>
+                </md-input-container>
+            </div>
         </form>
-
-        <br>
-        <md-divider></md-divider>
-        <br>
-
-        <div class="rsm-dialog-content" layout="row" layout-align="center start" layout-padding layout-margin>
-            <md-button class="md-primary md-raised" ng-click="cCreatePick.showAdvanced($event)">
-                <span style="color: #ffffff">Envelope Image</span>
-            </md-button>
-            <md-button class="md-primary md-raised">
-                <span style="color: #ffffff">Paper Image</span>
-            </md-button>
-        </div>
-
-        <div ng-if="pracDialogStatus" id="status">
-            <b layout="row" layout-align="center center" class="md-padding">{{pracDialogStatus}}</b>
-        </div>
-
-        <br>
-        <md-divider></md-divider>
-        <br>
 
         <!-- submit button -->
         <div layout-gt-xs="row" layout-align="start center">
@@ -95,7 +90,9 @@
                 <!-- style = "fill: white" -->
                 <ng-md-icon icon="send" size="32" style="fill: white"></ng-md-icon>
             </md-button>
-            <p>Send Pick Ticket for Job <b>{{cCreatePick.jobNumber }}</b>&nbsp;&nbsp;<ng-md-icon icon="face"></ng-md-icon></p>
+            <p>Send Pick Ticket for Job <b>{{cCreatePick.jobNumber }}</b>&nbsp;&nbsp;<ng-md-icon
+                    icon="face"></ng-md-icon>
+            </p>
         </div>
     </div>
 
