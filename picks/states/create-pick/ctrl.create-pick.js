@@ -2,11 +2,13 @@
     "use strict";
 
     angular.module('rsm-pick').controller('CreatePickCtrl', [
-        '$rootScope', '$scope', '$mdToast', 'rsmPickService',
+        '$rootScope', '$scope', '$mdToast', 'rsmPickService', '$mdDialog',
         CreatePickCtrlClass
     ]);
 
-    function CreatePickCtrlClass($rootScope, $scope, $mdToast, rsmPickService) {
+    function CreatePickCtrlClass(
+        $rootScope, $scope, $mdToast, rsmPickService, $mdDialog
+    ) {
         const vm = this;
         let pickTicketModel = {};
         $rootScope.R_appLocal = true;
@@ -17,6 +19,9 @@
         vm.showBoxOne = false;
         vm.showBoxTwo = false;
         vm.isOpen = false;
+        $scope.pracDialogStatus = "";
+        $scope.customFullscreen = false;
+
         //-- View model data bindings:
         vm.coordinatorName = '';        // 1
         vm.dueDate = new Date();        // 2
@@ -28,7 +33,36 @@
         vm.jobNumber = '';              // 8
 
         vm.sendPickTicket = sendPickTicket;
+        vm.showAdvanced = showAdvanced;
 
+        function showAdvanced(event) {
+            $mdDialog.show({
+                controller: DialogCtrl,
+                templateUrl: 'states/pick-tickets/dialog.prac.html',
+                parent: angular.element(document.body),
+                targetEvent: event,
+                clickOutsideToClose: true,
+                fullscreen: vm.customFullscreen
+            }).then(function (answer) {
+                $scope.pracDialogStatus = 'You said the information was "' + answer + '".';
+            }, function () {
+                $scope.pracDialogStatus = "You cancelled the dialog.";
+            });
+
+            function DialogCtrl($scope, $mdDialog) {
+                $scope.hide = function () {
+                    $mdDialog.hide();
+                };
+
+                $scope.cancel = function () {
+                    $mdDialog.cancel();
+                };
+
+                $scope.answer = function (answer) {
+                    $mdDialog.hide(answer);
+                };
+            }
+        }
 
         function sendPickTicket() {
             let isoDate = vm.dueDate;

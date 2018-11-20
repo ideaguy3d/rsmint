@@ -10,6 +10,7 @@
     </div>
 
     <div ng-hide="!cCreatePick.showPickForm" class="rsm-form-container">
+        <!-- send pick ticket form -->
         <form ng-submit="$event.preventDefault()">
             <!-- jobNumber & coordinatorName -->
             <div layout-gt-xs="row">
@@ -66,6 +67,27 @@
             </div>
         </form>
 
+        <br>
+        <md-divider></md-divider>
+        <br>
+
+        <div class="rsm-dialog-content" layout="row" layout-align="center start" layout-padding layout-margin>
+            <md-button class="md-primary md-raised" ng-click="cCreatePick.showAdvanced($event)">
+                <span style="color: #ffffff">Envelope Image</span>
+            </md-button>
+            <md-button class="md-primary md-raised">
+                <span style="color: #ffffff">Paper Image</span>
+            </md-button>
+        </div>
+
+        <div ng-if="pracDialogStatus" id="status">
+            <b layout="row" layout-align="center center" class="md-padding">{{pracDialogStatus}}</b>
+        </div>
+
+        <br>
+        <md-divider></md-divider>
+        <br>
+
         <!-- submit button -->
         <div layout-gt-xs="row" layout-align="start center">
             <md-button class="md-fab md-primary rsm-btn32-icon" aria-label="Add Inventory Item"
@@ -77,5 +99,5 @@
         </div>
     </div>
 
-    <!--<md-divider></md-divider>-->
+
 </section>
