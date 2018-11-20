@@ -5,18 +5,20 @@
                 <h2>Envelopes</h2>
                 <span flex></span>
                 <md-button class="md-icon-button" ng-click="cancel()">
-                    <md-icon md-svg-src="../images/ok.svg" aria-label="Close dialog"></md-icon>
+                    <ng-md-icon icon="cancel" aria-label="Close dialog"></ng-md-icon>
                 </md-button>
             </div>
         </md-toolbar>
 
         <md-dialog-content>
             <div class="md-dialog-content">
-                <p style="margin-top: 0;">Hover over image with mouse to enlarge it.</p>
-
-                <div ng-repeat="envelope in createPickEnvelopeImages" class="rsm-dialog-images">
-                    <div ng-click="createPickImageSelected(envelope.tid)">
-                        <img ng-src="{{envelope.url}}" alt="image" width="200px" class="rsm-scale-hover">
+                <p style="margin-top: 0;"><i><b>Hover over image w/mouse to enlarge it.</b></i></p>
+                <div class="rsm-text-center">
+                    <div ng-repeat="envelope in createPickEnvelopeImages" class="rsm-dialog-images">
+                        <div ng-click="createPickImageSelected(envelope.tid)">
+                            <img ng-src="{{envelope.url}}" alt="image" width="200px" class="rsm-scale-hover">
+                            <p><small>{{envelope.description}}</small> <b>{{envelope.permit}}</b></p>
+                        </div>
                     </div>
                 </div>
             </div>

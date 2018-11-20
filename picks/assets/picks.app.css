@@ -278,14 +278,19 @@ ng-md-icon.rsm-sidenav-icon > svg {
 .rsm-dialog-images {
     display: inline-block;
     margin: 8px;
+    cursor: pointer;
 }
 
 .rsm-scale-hover {
-    transition: all 0.2s linear;
+    transition: all 0.08s linear;
 }
 
 .rsm-scale-hover:hover {
-    transform: scale(2.0);
+    transform: scale(2.2);
+}
+
+.rsm-display-block {
+    display: block !important;
 }
 
 
