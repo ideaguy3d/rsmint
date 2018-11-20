@@ -275,6 +275,11 @@ ng-md-icon.rsm-sidenav-icon > svg {
     transform: scale(0.8);
 }
 
+.rsm-dialog-images {
+    display: inline-block;
+    margin: 8px;
+}
+
 
 
 

@@ -13,6 +13,42 @@
         let pickTicketModel = {};
         $rootScope.R_appLocal = true;
 
+        vm.imgEnvelopesUrls = [
+            {
+                tid: 1,
+                url: 'http://192.168.7.17/images/house-stock/envelope-url/p10%20Single%20Window%20Chevron,%20Fairfax%20VA.%201908.jpg',
+                description: ''
+            }, {
+                tid: 2,
+                url: 'http://192.168.7.17/images/house-stock/envelope-url/p9%20Single%20Window%20Black%20Eagle%20Standard%201935.jpg',
+                description: '#9 Single Window Black Eagle Standard 1935'
+            }, {
+                tid: 3,
+                url: 'http://192.168.7.17/images/house-stock/envelope-url/p10%20Single%20Window%20Washington%20DC,%201908.jpg',
+                description: '#10 Single Window Washington DC, 1908'
+            }, {
+                tid: 4,
+                url: 'http://192.168.7.17/images/house-stock/envelope-url/p9%20White%20Blank.jpg',
+                description: '#9 White Blank'
+            }, {
+                tid: 5,
+                url: 'http://192.168.7.17/images/house-stock/envelope-url/p10%20double%20window%20black%20bird%201st%20class%201946.jpg',
+                description: '#10 double window black bird 1st class 1946'
+            }, {
+                tid: 6,
+                url: 'http://192.168.7.17/images/house-stock/envelope-url/p10%20Double%20Window%20Blue%20Eagle%20First%20Class%201935.jpg',
+                description: '#10 Double Window Blue Eagle First Class 1935'
+            }, {
+                tid: 7,
+                url: 'http://192.168.7.17/images/house-stock/envelope-url/p10%20Double%20Window%20Blue%20Eagle%20First%20Class%201935.jpg',
+                description: '#10 Double Window Blue Eagle First Class 1935'
+            }, {
+                tid: 8,
+                url: 'http://192.168.7.17/images/house-stock/envelope-url/p10%20Double%20Window%20First%20Class%201946.jpg',
+                description: '#10 Double Window First Class 1946'
+            }
+        ];
+
         vm.viewTitle = 'Create a Pick ';
         vm.showPickForm = true;
         vm.requestStatus = '';
@@ -33,7 +69,7 @@
         vm.jobNumber = '';              // 8
 
         vm.sendPickTicket = sendPickTicket;
-        vm.showEvelopeImages = showEvelopeImages;
+        vm.showEnvelopeImages = showEnvelopeImages;
         vm.showPaperImages = showPaperImages;
 
         function showPaperImages(event) {
@@ -69,10 +105,10 @@
             }
         }
 
-        function showEvelopeImages(event) {
+        function showEnvelopeImages(event) {
             $mdDialog.show({
-                controller: DialogCtrl,
-                templateUrl: 'states/pick-tickets/dialog.prac.html',
+                controller: EnvelopeDialogCtrl,
+                templateUrl: 'states/pick-tickets/dialog.envelope.html',
                 parent: angular.element(document.body),
                 targetEvent: event,
                 clickOutsideToClose: true,
@@ -83,7 +119,9 @@
                 $scope.pracDialogStatus = "You cancelled the dialog.";
             });
 
-            function DialogCtrl($scope, $mdDialog) {
+            function EnvelopeDialogCtrl($scope, $mdDialog) {
+                $scope.createPickEnvelopeImages = vm.imgEnvelopesUrls;
+
                 $scope.hide = function () {
                     $mdDialog.hide();
                 };
@@ -96,9 +134,9 @@
                     $mdDialog.hide(answer);
                 };
 
-                $scope.selectedImage = function (image) {
-
-                }
+                $scope.createPickImageSelected = function (tid) {
+                    console.log("tid of envelope selected = " + tid);
+                };
             }
         }
 
