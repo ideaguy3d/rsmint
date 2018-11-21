@@ -160,17 +160,12 @@
                 permit: ''
             }, {
                 tid: 29,
-                url: '',
-                description: '',
-                permit: ''
-            }, {
-                tid: 30,
                 url: 'http://192.168.7.17/images/house-stock/envelope-url/s%206%20x%2011%20Brown%20Kraft%20Blank.jpg',
                 description: 's 6 x 11 Brown Kraft Blank',
                 permit: ''
             }, {
-                tid: 31,
-                url: 'http://192.168.7.17/images/house-stock/envelope-url/s%206%20x%2011%20Brown%20Kraft%20Blank.jpg',
+                tid: 30,
+                url: 'http://192.168.7.17/images/house-stock/envelope-url/s%206%20x%2011%20Special%20Double%20Window%20Brown%20Kraft%20First%20Class%201946.jpg',
                 description: 's 6 x 11 Special Double Window Brown Kraft First Class',
                 permit: '1946'
             }
@@ -196,6 +191,9 @@
         vm.showEnvelopeImages = showEnvelopeImages;
         vm.showPaperImages = showPaperImages;
 
+        //------------------------------------------
+        // ----------- Class Functions ------------
+        //------------------------------------------
         function showPaperImages(event) {
             $mdDialog.show({
                 controller: DialogCtrl,
@@ -232,18 +230,17 @@
         function showEnvelopeImages(event) {
             $mdDialog.show({
                 controller: EnvelopeDialogCtrl,
-                templateUrl: 'states/pick-tickets/dialog.envelope.html',
+                templateUrl: 'states/pick-tickets/dialog.envelope-grid.html',
                 parent: angular.element(document.body),
                 targetEvent: event,
                 clickOutsideToClose: true,
                 fullscreen: vm.customFullscreen
             }).then(function (tid) {
                 vm.imgEnvelopesUrls.forEach(function (elem) {
-                    if(elem.tid === tid) {
+                    if (elem.tid === tid) {
                         $scope.createPickEnvelopeImgUrl = elem.url;
                     }
                 });
-
             }, function () {
                 $scope.createPickEnvelopeUrlTidCancelled = "You cancelled the dialog.";
             });

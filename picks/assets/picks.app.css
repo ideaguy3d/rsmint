@@ -293,6 +293,10 @@ ng-md-icon.rsm-sidenav-icon > svg {
     display: block !important;
 }
 
+.rsm-75vw {
+    width: 75vw;
+}
+
 
 
 
