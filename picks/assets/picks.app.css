@@ -194,7 +194,7 @@ ng-md-icon.rsm-sidenav-icon > svg {
 }
 
 .rsm-crop {
-    width: 70px;
+    /*width: 70px;*/
     height: 70px;
     overflow: hidden;
 }
@@ -283,10 +283,12 @@ ng-md-icon.rsm-sidenav-icon > svg {
 
 .rsm-scale-hover {
     transition: all 0.08s linear;
+    cursor: pointer;
 }
 
 .rsm-scale-hover:hover {
-    transform: scale(2.2);
+    transform: scale(1.7);
+    z-index: 99999999 !important;
 }
 
 .rsm-display-block {
@@ -295,6 +297,11 @@ ng-md-icon.rsm-sidenav-icon > svg {
 
 .rsm-75vw {
     width: 75vw;
+}
+
+.rsm-grid-list {
+    margin: auto;
+    width: 57vw;
 }
 
 

@@ -239,6 +239,7 @@
                 vm.imgEnvelopesUrls.forEach(function (elem) {
                     if (elem.tid === tid) {
                         $scope.createPickEnvelopeImgUrl = elem.url;
+                        vm.envelopeImgUrl = elem.url;
                     }
                 });
             }, function () {
